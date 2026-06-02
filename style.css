@@ -298,6 +298,26 @@ background:#080808;
 .quote strong {
   color: #d4af37;
 }
+.cta-premium{
+    text-align:center;
+    padding:80px 20px;
+    background:linear-gradient(
+    135deg,
+    rgba(212,175,55,.12),
+    rgba(0,0,0,.9)
+    );
+}
+
+.cta-premium h2{
+    font-size:42px;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.cta-premium p{
+    color:#ddd;
+    margin-bottom:30px;
+}
 
 .cta {
   margin: 0 7%;
