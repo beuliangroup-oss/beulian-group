@@ -369,3 +369,117 @@ section{
     overflow:hidden;
 }
 }
+/* FIX MOBILE BEULIAN FINAL */
+@media screen and (max-width: 768px) {
+  html, body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    background: #050505 !important;
+  }
+
+  .hero {
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 20px 18px 45px !important;
+    overflow: hidden !important;
+  }
+
+  .navbar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+
+  .brand {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .brand img {
+    width: 90px !important;
+    height: 90px !important;
+    max-width: 90px !important;
+    object-fit: contain !important;
+    border-radius: 50% !important;
+  }
+
+  .menu {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+
+  .menu a {
+    margin: 0 !important;
+    font-size: 14px !important;
+  }
+
+  .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    width: 100% !important;
+  }
+
+  .hero-copy {
+    width: 100% !important;
+  }
+
+  .hero h1 {
+    font-size: 38px !important;
+    line-height: 1.05 !important;
+  }
+
+  .lead {
+    font-size: 17px !important;
+  }
+
+  .actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .btn {
+    width: fit-content !important;
+  }
+
+  .premium-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px !important;
+  }
+
+  .premium-card h2 {
+    font-size: 34px !important;
+  }
+
+  .section,
+  .about,
+  .services,
+  .portfolio,
+  .testimonials,
+  .contact {
+    width: 100% !important;
+    padding: 55px 18px !important;
+    overflow: hidden !important;
+  }
+
+  .cards,
+  .service-grid,
+  .portfolio-grid,
+  .testimonial-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .wa-float {
+    right: 14px !important;
+    bottom: 14px !important;
+    z-index: 9999 !important;
+  }
+}
