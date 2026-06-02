@@ -429,9 +429,17 @@ section{
     width: 100% !important;
   }
 
-  .hero h1 {
-    font-size: 38px !important;
-    line-height: 1.05 !important;
+  .hero h1{
+    font-size: 56px;
+    line-height: 1.1;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+    }
+}
   }
 
   .lead {
