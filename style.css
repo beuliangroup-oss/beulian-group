@@ -705,3 +705,36 @@ transition:0.4s;
 .banner-card:hover img{
 transform:scale(1.05);
 }
+/* FIX TESTIMONI TEXT */
+.testimonial-card,
+.testimonials .testimonial-card,
+.testimonial-grid article {
+    background: #121212 !important;
+    border: 1px solid rgba(212,175,55,.45) !important;
+}
+
+.testimonial-card p,
+.testimonials p,
+.testimonial-grid article p {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.testimonial-card strong,
+.testimonials strong,
+.testimonial-grid article strong {
+    color: #d4af37 !important;
+    opacity: 1 !important;
+}
+
+.testimonial-card span,
+.testimonials span {
+    color: #dddddd !important;
+    opacity: 1 !important;
+}
+
+.testimonials h2,
+#testimoni h2 {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
