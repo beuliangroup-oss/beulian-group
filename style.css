@@ -817,3 +817,43 @@ transform:scale(1.05);
     line-height:1.7 !important;
   }
 }
+/* TESTIMONI FIX FINAL */
+.testimonial-grid{
+    display:grid !important;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) !important;
+    gap:25px !important;
+}
+
+.testimonial-card{
+    background:#111111 !important;
+    border:1px solid rgba(212,175,55,.45) !important;
+    border-radius:22px !important;
+    padding:28px !important;
+    text-align:center !important;
+}
+
+.testimonial-card p{
+    color:#ffffff !important;
+    opacity:1 !important;
+    font-size:18px !important;
+    line-height:1.6 !important;
+}
+
+.testimonial-card strong{
+    color:#d4af37 !important;
+    display:block !important;
+    margin-top:18px !important;
+    font-size:20px !important;
+}
+
+.testimonial-card span{
+    color:#dddddd !important;
+    display:block !important;
+    margin-top:5px !important;
+    font-size:15px !important;
+}
+
+#testimoni h2,
+.testimonials h2{
+    color:#ffffff !important;
+}
