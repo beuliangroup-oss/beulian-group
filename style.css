@@ -673,3 +673,19 @@ text-align:center;
         font-size:34px;
     }
 }
+.banner-card{
+transition:0.4s;
+cursor:pointer;
+}
+
+.banner-card:hover{
+transform:translateY(-10px);
+}
+
+.banner-card img{
+transition:0.4s;
+}
+
+.banner-card:hover img{
+transform:scale(1.05);
+}
