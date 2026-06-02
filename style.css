@@ -322,3 +322,50 @@ footer {
     padding-top: 24px;
   }
 }
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+.hero-content{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+.hero-visual{
+    order:-1;
+    text-align:center;
+}
+
+.hero-visual img{
+    width:220px;
+    max-width:80%;
+    height:auto;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+}
+.brand img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+}
+
+body{
+    overflow-x:hidden;
+}
+
+section{
+    width:100%;
+    overflow:hidden;
+}
+}
