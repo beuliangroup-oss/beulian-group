@@ -301,11 +301,14 @@ profesional dan menarik perhatian.
       <p>Klik untuk melihat profil perusahaan lengkap.</p>
     </a>
 
-    <div class="service-card">
-      <span>06</span>
-      <h3>Copywriting</h3>
-      <p>Naskah iklan, headline, caption, dan CTA agar promosi lebih kuat menjual.</p>
-    </div>
+    <div class="service-card copywriting-card"
+     onclick="openImagePopup('assets/copywriting.png')">
+
+  <span>06</span>
+  <h3>Copywriting</h3>
+  <p>Naskah iklan, headline, caption, dan CTA agar promosi lebih kuat menjual.</p>
+
+</div>
 
     <div class="service-card">
       <span>07</span>
@@ -502,6 +505,21 @@ if(video.muted){
 }
 
 }
+  <div id="imagePopup" class="image-popup" onclick="closeImagePopup()">
+  <span class="popup-close">×</span>
+  <img id="popupImage" src="" alt="Preview">
+</div>
+
+<script>
+function openImagePopup(src){
+  document.getElementById("imagePopup").style.display = "flex";
+  document.getElementById("popupImage").src = src;
+}
+
+function closeImagePopup(){
+  document.getElementById("imagePopup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
