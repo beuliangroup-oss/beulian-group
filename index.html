@@ -363,26 +363,29 @@ profesional dan menarik perhatian.
 
   </form>
 </section>
-
-
+      
 </main>
-
 
 <!-- FLOATING WHATSAPP -->
 <a class="wa-float"
    href="https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20saya%20tertarik%20dengan%20jasa%20video%20iklan%20AI."
-   target="_blank">
+   target="_blank"
+   rel="noopener">
   WhatsApp
 </a>
 
+<!-- LIGHTBOX GAMBAR -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span class="close-lightbox">×</span>
+  <img id="lightbox-img" src="" alt="Preview Gambar">
+</div>
 
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Beulian Group. All Rights Reserved.</p>
 </footer>
 
-
-<!-- SCRIPT WHATSAPP FORM -->
+<!-- SCRIPT -->
 <script>
 function sendToWhatsApp(event) {
   event.preventDefault();
@@ -400,6 +403,15 @@ function sendToWhatsApp(event) {
     "Pesan: " + pesan;
 
   window.open("https://wa.me/62895404870004?text=" + text, "_blank");
+}
+
+function openLightbox(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
 }
 </script>
 
