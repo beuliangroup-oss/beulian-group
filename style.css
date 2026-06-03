@@ -766,3 +766,51 @@ footer {
     font-size:17px !important;
   }
 }
+/* FIX PORTFOLIO BANNER MOBILE */
+@media(max-width:768px){
+
+  .portfolio-grid,
+  .banner-gallery{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:28px !important;
+    width:100% !important;
+  }
+
+  .portfolio-card,
+  .portfolio-item,
+  .banner-card{
+    width:100% !important;
+    max-width:100% !important;
+    padding:14px !important;
+    border-radius:22px !important;
+    overflow:hidden !important;
+  }
+
+  .portfolio-card img,
+  .portfolio-item img,
+  .banner-card img{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+    display:block !important;
+    border-radius:16px !important;
+  }
+
+  #portfolio,
+  .portfolio,
+  .banner-page{
+    padding-left:16px !important;
+    padding-right:16px !important;
+    overflow:hidden !important;
+  }
+
+  #portfolio h2,
+  .portfolio h2,
+  .banner-hero h1{
+    font-size:34px !important;
+    line-height:1.15 !important;
+    text-align:center !important;
+  }
+}
