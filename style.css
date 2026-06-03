@@ -1243,3 +1243,41 @@ box-shadow:0 20px 60px rgba(212,175,55,.15);
     grid-template-columns:1fr !important;
   }
 }
+.copywriting-card{
+  cursor:pointer;
+}
+
+.copywriting-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 25px 70px rgba(212,175,55,.18);
+}
+
+.image-popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.94);
+  z-index:999999;
+  justify-content:center;
+  align-items:center;
+  padding:18px;
+}
+
+.image-popup img{
+  max-width:95vw;
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:18px;
+  border:1px solid rgba(212,175,55,.45);
+  box-shadow:0 0 60px rgba(212,175,55,.35);
+}
+
+.popup-close{
+  position:absolute;
+  top:18px;
+  right:28px;
+  color:#fff;
+  font-size:46px;
+  font-weight:bold;
+  cursor:pointer;
+}
