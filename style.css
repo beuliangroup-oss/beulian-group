@@ -814,3 +814,83 @@ footer {
     text-align:center !important;
   }
 }
+/* FIX PORTFOLIO & LAYANAN TAMBAHAN */
+.portfolio-grid{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) !important;
+  gap:26px !important;
+  width:100% !important;
+}
+
+.portfolio-item{
+  background:#111 !important;
+  border:1px solid rgba(212,175,55,.35) !important;
+  border-radius:24px !important;
+  padding:18px !important;
+  overflow:hidden !important;
+  box-shadow:0 20px 55px rgba(0,0,0,.35) !important;
+  transition:.35s ease !important;
+}
+
+.portfolio-item:hover{
+  transform:translateY(-8px) !important;
+  box-shadow:0 25px 70px rgba(212,175,55,.18) !important;
+}
+
+.portfolio-item img{
+  width:100% !important;
+  max-width:100% !important;
+  height:auto !important;
+  object-fit:contain !important;
+  display:block !important;
+  border-radius:18px !important;
+  cursor:pointer !important;
+  background:#000 !important;
+}
+
+.portfolio-item h3{
+  color:#d4af37 !important;
+  text-align:center !important;
+  font-size:24px !important;
+  margin-top:18px !important;
+  padding:0 !important;
+}
+
+.company-profile-card{
+  display:block !important;
+  color:#fff !important;
+  text-decoration:none !important;
+}
+
+.company-profile-card h3{
+  color:#fff !important;
+}
+
+.company-profile-card p{
+  color:#d8d8d8 !important;
+}
+
+/* MOBILE FIX */
+@media(max-width:768px){
+  #portofolio,
+  .portfolio,
+  .section{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .portfolio-grid,
+  .service-grid{
+    grid-template-columns:1fr !important;
+    gap:24px !important;
+  }
+
+  .portfolio-item{
+    padding:14px !important;
+    border-radius:22px !important;
+  }
+
+  .portfolio-item h3{
+    font-size:22px !important;
+  }
+}
