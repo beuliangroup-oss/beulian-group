@@ -644,3 +644,32 @@ footer {
     transform:translateY(-8px) scale(1.02) !important;
     box-shadow:0 25px 70px rgba(212,175,55,.25) !important;
 }
+/* LIGHTBOX POPUP */
+#lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.92);
+    z-index:999999;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+#lightbox img{
+    max-width:95vw;
+    max-height:90vh;
+    object-fit:contain;
+    border-radius:16px;
+    box-shadow:0 0 50px rgba(212,175,55,.35);
+}
+
+.close-lightbox{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:#fff;
+    font-size:46px;
+    font-weight:bold;
+    cursor:pointer;
+}
