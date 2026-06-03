@@ -25,7 +25,21 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+<div id="lightbox" onclick="closeLightbox()">
+  <span class="close-lightbox">×</span>
+  <img id="lightbox-img" src="">
+</div>
 
+<script>
+function openLightbox(src){
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 <body>
 
   <!-- Floating WhatsApp -->
