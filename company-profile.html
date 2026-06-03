@@ -1,158 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Beulian Group | Company Profile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  width:100%;
-  overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
 body{
-  width:100%;
-  min-height:100vh;
-  background:
-    radial-gradient(circle at top right, rgba(212,175,55,.16), transparent 32%),
-    linear-gradient(135deg,#030303,#080808,#1c1204);
-  color:#fff;
-  font-family:Arial, Helvetica, sans-serif;
-  overflow-x:hidden;
-  line-height:1.7;
+font-family:'Poppins',sans-serif;
+background:#050505;
+color:#fff;
+overflow-x:hidden;
 }
 
-.company{
-  width:100%;
-  max-width:1050px;
-  margin:0 auto;
-  padding:50px 18px 70px;
+.container{
+width:90%;
+max-width:1300px;
+margin:auto;
 }
 
-.back-btn{
-  display:inline-block;
-  margin-bottom:28px;
-  padding:12px 22px;
-  border-radius:999px;
-  border:1px solid rgba(212,175,55,.5);
-  color:#d4af37;
-  text-decoration:none;
-  font-weight:800;
-  background:rgba(0,0,0,.25);
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(212,175,55,.2);
 }
 
-.company-logo{
-  width:130px;
-  height:130px;
-  object-fit:contain;
-  display:block;
-  margin:0 auto 22px;
-  border-radius:50%;
-  filter:drop-shadow(0 0 28px rgba(212,175,55,.45));
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
 }
 
-.company h1{
-  text-align:center;
-  color:#d4af37;
-  font-size:38px;
-  letter-spacing:3px;
-  line-height:1.15;
-  margin-bottom:38px;
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
 }
 
-.company-card{
-  width:100%;
-  max-width:100%;
-  background:linear-gradient(145deg,#101010,#181818);
-  border:1px solid rgba(212,175,55,.35);
-  padding:28px;
-  border-radius:24px;
-  margin-bottom:24px;
-  box-shadow:
-    0 18px 45px rgba(0,0,0,.42),
-    inset 0 0 20px rgba(212,175,55,.04);
-  transition:.3s ease;
-  overflow:hidden;
+.logo img{
+width:65px;
+height:65px;
+border-radius:50%;
+object-fit:cover;
+box-shadow:0 0 20px rgba(212,175,55,.4);
 }
 
-.company-card:hover{
-  transform:translateY(-5px);
-  box-shadow:
-    0 25px 65px rgba(0,0,0,.55),
-    0 0 28px rgba(212,175,55,.16);
-  border-color:rgba(212,175,55,.6);
+.logo-text h3{
+font-size:24px;
+color:#d4af37;
 }
 
-.company-card h2{
-  color:#d4af37;
-  margin-bottom:12px;
-  font-size:26px;
-  line-height:1.25;
+.logo-text p{
+font-size:13px;
+color:#ddd;
 }
 
-.company-card p,
-.company-card li{
-  color:#eeeeee;
-  font-size:17px;
-  line-height:1.8;
+.menu{
+display:flex;
+gap:30px;
 }
 
-.company-card ul{
-  padding-left:22px;
+.menu a{
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
 }
 
-.company-card li{
-  margin-bottom:8px;
+.menu a:hover{
+color:#d4af37;
 }
 
-.company-card a{
-  color:#d4af37;
-  text-decoration:none;
-  font-weight:800;
-  word-break:break-word;
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+padding-top:100px;
+background:
+radial-gradient(circle at right, rgba(212,175,55,.15), transparent 35%),
+linear-gradient(135deg,#030303,#0c0c0c,#1d1405);
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:60px;
+}
+
+.hero h1{
+font-size:72px;
+line-height:1;
+margin-bottom:25px;
+font-weight:800;
+}
+
+.gold{
+color:#d4af37;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.8;
+color:#ddd;
+margin-bottom:35px;
+}
+
+.hero-logo{
+text-align:center;
+}
+
+.hero-logo img{
+width:100%;
+max-width:550px;
+filter:drop-shadow(0 0 40px rgba(212,175,55,.4));
+}
+
+.btn{
+display:inline-block;
+padding:16px 34px;
+border-radius:999px;
+font-weight:700;
+text-decoration:none;
+margin-right:12px;
+transition:.3s;
+}
+
+.btn-gold{
+background:linear-gradient(135deg,#b98722,#f3d37c);
+color:#111;
+}
+
+.btn-outline{
+border:1px solid rgba(212,175,55,.4);
+color:#fff;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+/* SECTION */
+
+section{
+padding:100px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.section-title p{
+color:#bbb;
+}
+
+/* ABOUT */
+
+.about-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.about-card{
+background:#111;
+padding:35px;
+border-radius:24px;
+border:1px solid rgba(212,175,55,.25);
+transition:.4s;
+}
+
+.about-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(212,175,55,.15);
+}
+
+.about-card h3{
+color:#d4af37;
+margin-bottom:15px;
+}
+
+/* SERVICES */
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.service-card{
+background:#111;
+padding:35px;
+border-radius:24px;
+border:1px solid rgba(212,175,55,.25);
+}
+
+.service-card h3{
+color:#d4af37;
+margin-bottom:15px;
+}
+
+/* STATS */
+
+.stats{
+background:#0b0b0b;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.stat{
+background:#111;
+padding:35px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(212,175,55,.25);
+}
+
+.stat h3{
+font-size:52px;
+color:#d4af37;
+}
+
+/* CONTACT */
+
+.contact-box{
+background:#111;
+padding:50px;
+border-radius:30px;
+text-align:center;
+border:1px solid rgba(212,175,55,.25);
+}
+
+.contact-box h2{
+margin-bottom:20px;
+}
+
+.contact-box p{
+color:#ddd;
+margin-bottom:25px;
+}
+
+/* FOOTER */
+
+footer{
+padding:30px;
+text-align:center;
+background:#000;
+color:#999;
+border-top:1px solid rgba(212,175,55,.15);
 }
 
 /* MOBILE */
+
 @media(max-width:768px){
-  .company{
-    padding:34px 16px 55px;
-  }
 
-  .back-btn{
-    font-size:14px;
-    padding:10px 18px;
-  }
-
-  .company-logo{
-    width:105px;
-    height:105px;
-    margin-bottom:18px;
-  }
-
-  .company h1{
-    font-size:28px;
-    letter-spacing:2px;
-    margin-bottom:30px;
-  }
-
-  .company-card{
-    padding:22px;
-    border-radius:20px;
-    margin-bottom:20px;
-  }
-
-  .company-card:hover{
-    transform:none;
-  }
-
-  .company-card h2{
-    font-size:22px;
-  }
-
-  .company-card p,
-  .company-card li{
-    font-size:15.5px;
-    line-height:1.75;
-  }
+.hero-grid,
+.about-grid,
+.service-grid,
+.stats-grid{
+grid-template-columns:1fr;
 }
+
+.hero h1{
+font-size:42px;
+}
+
+.section-title h2{
+font-size:34px;
+}
+
+.menu{
+display:none;
+}
+
+.logo img{
+width:55px;
+height:55px;
+}
+
+}
+
 </style>
+</head>
+
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo">
+<img src="assets/logo-beulian-group.png" alt="Beulian Group">
+<div class="logo-text">
+<h3>Beulian Group</h3>
+<p>Creative Digital Agency</p>
+</div>
+</div>
+
+<nav class="menu">
+<a href="#tentang">Tentang</a>
+<a href="#layanan">Layanan</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#kontak">Kontak</a>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+<h1>
+KAMI WUJUDKAN
+<span class="gold">IDE MENJADI KARYA</span>
+YANG BERDAMPAK
+</h1>
+
+<p>
+Beulian Group adalah Creative Digital Agency yang berfokus pada Video Iklan AI, Branding, Social Media Content, Digital Marketing, dan Company Profile Premium.
+</p>
+
+<a href="#layanan" class="btn btn-gold">Lihat Layanan</a>
+<a href="#kontak" class="btn btn-outline">Hubungi Kami</a>
+
+</div>
+
+<div class="hero-logo">
+<img src="assets/logo-beulian-group.png" alt="Beulian Group Logo">
+</div>
+
+</div>
+
+</section>
+
+<section id="tentang">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Tentang Kami</h2>
+<p>Creative Digital Agency Premium</p>
+</div>
+
+<div class="about-grid">
+
+<div class="about-card">
+<h3>VISI</h3>
+<p>Menjadi Creative Agency terpercaya yang membantu bisnis tumbuh lebih cepat.</p>
+</div>
+
+<div class="about-card">
+<h3>MISI</h3>
+<p>Menciptakan karya visual berkualitas tinggi yang berdampak nyata.</p>
+</div>
+
+<div class="about-card">
+<h3>NILAI</h3>
+<p>Kreativitas, kualitas, profesionalisme dan komitmen penuh.</p>
+</div>
+
+<div class="about-card">
+<h3>KOMITMEN</h3>
+<p>Setiap project dikerjakan dengan standar premium dan tepat waktu.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="layanan">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Layanan Kami</h2>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<h3>Video Iklan AI</h3>
+<p>Video promosi cinematic premium untuk produk dan jasa.</p>
+</div>
+
+<div class="service-card">
+<h3>Branding & Design</h3>
+<p>Logo, identitas visual, kemasan dan materi promosi.</p>
+</div>
+
+<div class="service-card">
+<h3>Digital Marketing</h3>
+<p>Strategi pemasaran digital untuk meningkatkan penjualan.</p>
+</div>
+
+<div class="service-card">
+<h3>Landing Page</h3>
+<p>Website profesional untuk bisnis dan campaign.</p>
+</div>
+
+<div class="service-card">
+<h3>Copywriting</h3>
+<p>Headline, caption dan CTA yang lebih menjual.</p>
+</div>
+
+<div class="service-card">
+<h3>Konsultasi Bisnis</h3>
+<p>Strategi pertumbuhan bisnis berbasis digital.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat">
+<h3>200+</h3>
+<p>Project Selesai</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Kepuasan Klien</p>
+</div>
+
+<div class="stat">
+<h3>50+</h3>
+<p>Klien Aktif</p>
+</div>
+
+<div class="stat">
+<h3>5+</h3>
+<p>Tahun Pengalaman</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="kontak">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>Hubungi Kami</h2>
+
+<p>
+Email : beuliangroup@gmail.com<br>
+WhatsApp : +62 895-4048-70004
+</p>
+
+<a href="https://wa.me/62895404870004" class="btn btn-gold">
+WhatsApp Sekarang
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Beulian Group. All Rights Reserved.
+</footer>
+
+</body>
+</html>
