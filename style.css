@@ -689,3 +689,34 @@ footer {
 .service-thumb:hover img{
     transform:scale(1.05);
 }
+.contact-box{
+  max-width:800px;
+  margin:30px auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.contact-box div{
+  background:#111;
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:20px;
+  padding:25px;
+}
+
+.contact-box strong{
+  display:block;
+  color:#d4af37;
+  margin-bottom:8px;
+}
+
+.contact-box a{
+  color:#fff;
+  font-weight:700;
+}
+
+@media(max-width:768px){
+  .contact-box{
+    grid-template-columns:1fr;
+  }
+}
