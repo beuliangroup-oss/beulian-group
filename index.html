@@ -258,124 +258,153 @@ profesional dan menarik perhatian.
   <section id="testimoni" class="section dark">
     <div class="container">
 
-        <h2>Testimoni Klien</h2>
+        <!-- TESTIMONI -->
+<section id="testimoni" class="section black">
+  <p class="label">Testimoni Klien</p>
+  <h2>Dipercaya untuk membantu bisnis tampil lebih profesional.</h2>
 
-        <div class="testimonial-grid">
+  <div class="testimonial-grid">
 
-            <div class="testimonial-card">
-                <p>
-                    "Video iklan AI dari Beulian Group meningkatkan
-                    engagement bisnis kami secara signifikan."
-                </p>
-                <strong>Andi Wijaya</strong>
-                <span>Owner Fashion Brand</span>
-            </div>
-
-            <div class="testimonial-card">
-                <p>
-                    "Desain premium dan pelayanan sangat profesional.
-                    Hasilnya melebihi ekspektasi."
-                </p>
-                <strong>Dewi Lestari</strong>
-                <span>Beauty Clinic</span>
-            </div>
-
-            <div class="testimonial-card">
-                <p>
-                    "Konten TikTok yang dibuat berhasil meningkatkan
-                    penjualan produk kami."
-                </p>
-                <strong>Rizky Pratama</strong>
-                <span>UMKM Kuliner</span>
-            </div>
-
-        </div>
-
+    <div class="testimonial-card">
+      <p>
+        “Video iklan AI dari Beulian Group membantu tampilan promosi bisnis kami
+        terlihat lebih premium dan profesional.”
+      </p>
+      <strong>Andi Wijaya</strong>
+      <span>Owner Fashion Brand</span>
     </div>
+
+    <div class="testimonial-card">
+      <p>
+        “Desain premium dan pelayanan sangat responsif.
+        Hasilnya membuat brand kami terlihat lebih meyakinkan.”
+      </p>
+      <strong>Dewi Lestari</strong>
+      <span>Beauty Clinic</span>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        “Materi iklannya siap dipakai untuk Instagram, TikTok,
+        dan campaign marketplace.”
+      </p>
+      <strong>Rizky Pratama</strong>
+      <span>UMKM Kuliner</span>
+    </div>
+
+  </div>
 </section>
 
-  <section id="testimoni" class="section black">
-    <p class="label">Testimoni</p>
-    <h2>Dipercaya untuk membantu bisnis tampil lebih profesional.</h2>
 
-    <div class="testimonial-grid">
-      <div class="quote">
-        <p>“Tampilan promosi jadi lebih rapi, premium, dan lebih mudah dipakai untuk campaign.”</p>
-        <strong>Brand Owner</strong>
-      </div>
-      <div class="quote">
-        <p>“Konsep visualnya membantu produk terlihat lebih mahal dan meyakinkan.”</p>
-        <strong>Business Partner</strong>
-      </div>
-      <div class="quote">
-        <p>“Materi iklannya siap dipakai untuk media sosial dan marketplace.”</p>
-        <strong>Digital Seller</strong>
-      </div>
-    </div>
-  </section>
+<!-- CTA -->
+<section class="cta">
+  <h2>Siap membuat brand Anda terlihat lebih berkelas?</h2>
+  <p>Kirim kebutuhan promosi Anda, kami bantu susun konsep visual terbaik.</p>
 
-  <section class="cta">
-    <h2>Siap membuat brand Anda terlihat lebih berkelas?</h2>
-    <p>Kirim kebutuhan promosi Anda, kami bantu susun konsep visual terbaik.</p>
-    <a class="btn gold" href="mailto:beuliangroup@gmail.com">Hubungi Beulian Group</a>
-  </section>
-  
-<section id="kontak" class="section">
-    <div class="container">
-
-        <h2>Hubungi Kami</h2>
-
-        <form class="contact-form">
-
-            <input
-                type="text"
-                placeholder="Nama Lengkap"
-                required>
-
-            <input
-                type="email"
-                placeholder="Email"
-                required>
-
-            <input
-                type="text"
-                placeholder="Nomor WhatsApp"
-                required>
-
-            <textarea
-                rows="6"
-                placeholder="Pesan Anda">
-            </textarea>
-
-            <button type="submit" class="btn gold">
-                Kirim Pesan
-            </button>
-
-        </form>
-
-    </div>
-</section>
-  <section id="kontak" class="section contact">
-    <p class="label dark-label">Kontak Resmi</p>
-    <h2>Mulai konsultasi project Anda.</h2>
-    <p>Email:</p>
-    <a class="email" href="mailto:beuliangroup@gmail.com">beuliangroup@gmail.com</a>
-  </section>
-  <a class="wa-float"
-href="https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20saya%20tertarik%20dengan%20jasa%20video%20iklan%20AI."
-target="_blank">
-WhatsApp
-</a>
   <a class="btn gold"
-href="https://wa.me/62895404870004"
-target="_blank">
-Hubungi Kami
-</a>
+     href="https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20saya%20ingin%20konsultasi%20project%20iklan%20digital."
+     target="_blank">
+    Konsultasi via WhatsApp
+  </a>
+</section>
+
+
+<!-- KONTAK -->
+<section id="kontak" class="section contact">
+  <p class="label dark-label">Kontak Resmi</p>
+  <h2>Mulai konsultasi project Anda.</h2>
+
+  <div class="contact-box">
+
+    <div>
+      <strong>WhatsApp</strong>
+      <a href="https://wa.me/62895404870004"
+         target="_blank">
+        +62 895-4048-70004
+      </a>
+    </div>
+
+    <div>
+      <strong>Email</strong>
+      <a href="mailto:beuliangroup@gmail.com">
+        beuliangroup@gmail.com
+      </a>
+    </div>
+
+  </div>
+
+  <form class="contact-form"
+        onsubmit="sendToWhatsApp(event)">
+
+    <input
+      type="text"
+      id="nama"
+      placeholder="Nama Lengkap"
+      required>
+
+    <input
+      type="text"
+      id="bisnis"
+      placeholder="Nama Bisnis / Brand"
+      required>
+
+    <input
+      type="text"
+      id="whatsapp"
+      placeholder="Nomor WhatsApp"
+      required>
+
+    <textarea
+      id="pesan"
+      rows="6"
+      placeholder="Ceritakan kebutuhan project Anda"
+      required></textarea>
+
+    <button type="submit" class="btn gold">
+      Kirim Pesan ke WhatsApp
+    </button>
+
+  </form>
+</section>
+
+
 </main>
 
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float"
+   href="https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20saya%20tertarik%20dengan%20jasa%20video%20iklan%20AI."
+   target="_blank">
+  WhatsApp
+</a>
+
+
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Beulian Group. All Rights Reserved.</p>
 </footer>
+
+
+<!-- SCRIPT WHATSAPP FORM -->
+<script>
+function sendToWhatsApp(event) {
+  event.preventDefault();
+
+  const nama = document.getElementById("nama").value;
+  const bisnis = document.getElementById("bisnis").value;
+  const whatsapp = document.getElementById("whatsapp").value;
+  const pesan = document.getElementById("pesan").value;
+
+  const text =
+    "Halo Beulian Group,%0A%0A" +
+    "Nama: " + nama + "%0A" +
+    "Bisnis/Brand: " + bisnis + "%0A" +
+    "WhatsApp: " + whatsapp + "%0A" +
+    "Pesan: " + pesan;
+
+  window.open("https://wa.me/62895404870004?text=" + text, "_blank");
+}
+</script>
 
 </body>
 </html>
