@@ -673,3 +673,19 @@ footer {
     font-weight:bold;
     cursor:pointer;
 }
+.service-thumb{
+    margin:20px 0;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.service-thumb img{
+    width:100%;
+    display:block;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.service-thumb:hover img{
+    transform:scale(1.05);
+}
