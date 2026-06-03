@@ -474,32 +474,34 @@ function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
 
-  <script>
+  function toggleSound(videoId, btn){
 
-function toggleSound(videoId, btn){
-
-const video =
-document.getElementById(videoId);
+const video = document.getElementById(videoId);
 
 if(video.muted){
-video.muted = false;
-btn.innerHTML = "🔊";
+
+    document.querySelectorAll("video").forEach(v=>{
+        v.muted = true;
+    });
+
+    document.querySelectorAll(".sound-btn").forEach(b=>{
+        b.innerHTML = "🔇";
+    });
+
+    video.muted = false;
+    video.volume = 1;
+    video.play();
+
+    btn.innerHTML = "🔊";
+
 }else{
-video.muted = true;
-btn.innerHTML = "🔇";
-}
+
+    video.muted = true;
+    btn.innerHTML = "🔇";
 
 }
 
-function openFullscreen(video){
-
-if(video.requestFullscreen){
-video.requestFullscreen();
 }
-
-}
-
-</script>
 
 </body>
 </html>
