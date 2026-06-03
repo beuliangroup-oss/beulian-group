@@ -474,6 +474,33 @@ function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
 </script>
+      function toggleSound(videoId, btn){
+
+const video = document.getElementById(videoId);
+
+if(video.muted){
+    video.muted = false;
+    btn.innerHTML = "🔊";
+}else{
+    video.muted = true;
+    btn.innerHTML = "🔇";
+}
+
+}
+
+function openFullscreen(video){
+
+if(video.requestFullscreen){
+    video.requestFullscreen();
+}
+else if(video.webkitRequestFullscreen){
+    video.webkitRequestFullscreen();
+}
+else if(video.msRequestFullscreen){
+    video.msRequestFullscreen();
+}
+
+}
 
 </body>
 </html>
