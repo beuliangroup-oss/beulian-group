@@ -255,8 +255,7 @@ alt="Daftar Harga Video Iklan Premium Beulian Group">
         </button>
 
     </div>
-      <div id="videoPopup" class="video-popup">
-  <button class="close-video" onclick="closeVideoPopup()">×</button>
+    
 
   <video
     id="popupVideo"
@@ -706,6 +705,44 @@ function closeVideoPopup(){
   popup.classList.remove("active");
 }
 </script>
+      
+<div id="videoPopup" class="video-popup">
+  <button class="close-video" onclick="closeVideoPopup()">×</button>
 
+  <div class="video-popup-box">
+    <video
+      id="popupVideo"
+      controls
+      playsinline>
+    </video>
+  </div>
+</div>
+
+      <script>
+function openVideoPopup(src){
+  const popup = document.getElementById("videoPopup");
+  const video = document.getElementById("popupVideo");
+
+  popup.classList.add("active");
+  video.src = src;
+  video.muted = false;
+  video.volume = 1;
+  video.controls = true;
+
+  video.play();
+}
+
+function closeVideoPopup(){
+  const popup = document.getElementById("videoPopup");
+  const video = document.getElementById("popupVideo");
+
+  video.pause();
+  video.removeAttribute("src");
+  video.load();
+
+  popup.classList.remove("active");
+}
+</script>
+      
 </body>
 </html>
