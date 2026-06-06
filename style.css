@@ -1488,3 +1488,35 @@ object-fit:contain !important;
   background:#d4af37 !important;
   color:#111 !important;
 } ia
+.video-popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.94);
+  z-index:999999;
+  justify-content:center;
+  align-items:center;
+  padding:18px;
+}
+
+.video-popup.active{
+  display:flex;
+}
+
+.video-popup video{
+  width:95vw;
+  max-width:900px;
+  aspect-ratio:16/9;
+  border-radius:20px;
+  background:#000;
+}
+
+.close-video{
+  position:absolute;
+  top:22px;
+  right:28px;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:58px;
+}
