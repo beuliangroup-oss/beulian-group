@@ -222,12 +222,44 @@ alt="Daftar Harga Video Iklan Premium Beulian Group">
     <p class="label">Layanan Utama</p>
     <h2>Solusi visual premium untuk kebutuhan promosi digital.</h2>
 
-    <div class="service-grid">
-      <div class="service-card">
-        <span>01</span>
-        <h3>Video Iklan AI</h3>
-        <p>Video promosi cinematic untuk produk, jasa, campaign, dan penawaran khusus.</p>
-      </div>
+
+    <div class="service-card video-card">
+
+    <span>01</span>
+
+    <div class="video-wrapper">
+
+        <video
+            class="promo-video"
+            muted
+            autoplay
+            loop
+            playsinline
+            onclick="openVideoFullscreen(this)">
+
+            <source src="assets/video-iklan-ai.mp4" type="video/mp4">
+
+        </video>
+
+        <button
+            class="sound-btn"
+            onclick="toggleSound(this)">
+
+            🔇
+
+        </button>
+
+    </div>
+
+    <h3>Video Iklan AI</h3>
+
+    <p>
+        Video promosi cinematic untuk produk,
+        jasa, campaign, dan penawaran khusus.
+    </p>
+
+</div>
+    
       <div class="service-card">
 
 <span>02</span>
@@ -542,6 +574,24 @@ document.querySelectorAll('.menu a, .premium-menu a').forEach(link => {
   });
 });
 </script>
+
+      <div id="videoModal" class="video-modal">
+
+    <span class="close-modal"
+          onclick="closeVideoModal()">
+
+          ✕
+
+    </span>
+
+    <video
+        id="modalVideo"
+        controls
+        autoplay>
+
+    </video>
+
+</div>
 
 </body>
 </html>
