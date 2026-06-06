@@ -592,6 +592,48 @@ document.querySelectorAll('.menu a, .premium-menu a').forEach(link => {
     </video>
 
 </div>
+      <script>
+
+function toggleSound(button){
+
+    const video =
+    button.parentElement.querySelector("video");
+
+    video.muted = !video.muted;
+
+    button.innerHTML =
+    video.muted ? "🔇" : "🔊";
+}
+
+function openVideoFullscreen(video){
+
+    const modal =
+    document.getElementById("videoModal");
+
+    const modalVideo =
+    document.getElementById("modalVideo");
+
+    modalVideo.src = video.currentSrc;
+
+    modal.classList.add("active");
+
+    modalVideo.play();
+}
+
+function closeVideoModal(){
+
+    const modal =
+    document.getElementById("videoModal");
+
+    const modalVideo =
+    document.getElementById("modalVideo");
+
+    modal.classList.remove("active");
+
+    modalVideo.pause();
+}
+
+</script>
 
 </body>
 </html>
