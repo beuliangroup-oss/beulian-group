@@ -235,17 +235,16 @@ alt="Daftar Harga Video Iklan Premium Beulian Group">
 
     <div class="video-wrapper">
 
-        <video
-            class="promo-video"
-            muted
-            autoplay
-            loop
-            playsinline
-            onclick="openVideoFullscreen(this)">
+      <video
+  class="portfolio-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  onclick="openVideoPopup('assets/video-iklan-ai.mp4')">
 
-            <source src="assets/video-iklan-ai.mp4" type="video/mp4">
-
-        </video>
+  <source src="assets/video-iklan-ai.mp4" type="video/mp4">
+</video>
 
         <button
             class="sound-btn"
@@ -256,6 +255,15 @@ alt="Daftar Harga Video Iklan Premium Beulian Group">
         </button>
 
     </div>
+      <div id="videoPopup" class="video-popup">
+  <button class="close-video" onclick="closeVideoPopup()">×</button>
+
+  <video
+    id="popupVideo"
+    controls
+    playsinline>
+  </video>
+</div>
 
     <h3>Video Iklan AI</h3>
 
@@ -672,6 +680,30 @@ function toggleSound(event, videoId, btn){
     btn.innerHTML = "🔇";
     btn.classList.remove("active");
   }
+}
+</script>
+
+      <script>
+function openVideoPopup(src){
+  const popup = document.getElementById("videoPopup");
+  const video = document.getElementById("popupVideo");
+
+  popup.classList.add("active");
+
+  video.src = src;
+  video.muted = false;
+  video.volume = 1;
+  video.controls = true;
+  video.play();
+}
+
+function closeVideoPopup(){
+  const popup = document.getElementById("videoPopup");
+  const video = document.getElementById("popupVideo");
+
+  video.pause();
+  video.src = "";
+  popup.classList.remove("active");
 }
 </script>
 
