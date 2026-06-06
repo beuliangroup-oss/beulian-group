@@ -143,10 +143,12 @@ alt="Daftar Harga Video Iklan Premium Beulian Group">
 
   </video>
 
-  <button class="sound-btn"
-          onclick="toggleSound('video1',this)">
-    🔇
-  </button>
+<button
+  type="button"
+  class="sound-btn"
+  onclick="toggleSound(event, 'video1', this)">
+  🔇
+</button>
 
 </div>
 
@@ -168,10 +170,12 @@ alt="Daftar Harga Video Iklan Premium Beulian Group">
 
   </video>
 
-  <button class="sound-btn"
-          onclick="toggleSound('video2',this)">
-    🔇
-  </button>
+<button
+  type="button"
+  class="sound-btn"
+  onclick="toggleSound(event, 'video2', this)">
+  🔇
+</button>
 
 </div>
 
@@ -193,10 +197,12 @@ alt="Daftar Harga Video Iklan Premium Beulian Group">
 
   </video>
 
-  <button class="sound-btn"
-          onclick="toggleSound('video3',this)">
-    🔇
-  </button>
+  <button
+  type="button"
+  class="sound-btn"
+  onclick="toggleSound(event, 'video3', this)">
+  🔇
+</button>
 
 </div>
 
@@ -633,6 +639,40 @@ function closeVideoModal(){
     modalVideo.pause();
 }
 
+</script>
+      <script>
+function toggleSound(event, videoId, btn){
+  event.stopPropagation();
+
+  const video = document.getElementById(videoId);
+
+  document.querySelectorAll("video").forEach(v => {
+    if(v.id !== videoId){
+      v.muted = true;
+      v.volume = 0;
+    }
+  });
+
+  document.querySelectorAll(".sound-btn").forEach(b => {
+    if(b !== btn){
+      b.innerHTML = "🔇";
+      b.classList.remove("active");
+    }
+  });
+
+  video.muted = !video.muted;
+
+  if(!video.muted){
+    video.volume = 1;
+    video.play();
+    btn.innerHTML = "🔊";
+    btn.classList.add("active");
+  }else{
+    video.volume = 0;
+    btn.innerHTML = "🔇";
+    btn.classList.remove("active");
+  }
+}
 </script>
 
 </body>
