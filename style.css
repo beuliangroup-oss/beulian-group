@@ -1520,3 +1520,79 @@ object-fit:contain !important;
   color:#fff;
   font-size:58px;
 }
+/* FIX VIDEO POPUP MOBILE */
+.video-popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  background:rgba(0,0,0,.94);
+  justify-content:center;
+  align-items:center;
+  padding:18px;
+}
+
+.video-popup.active{
+  display:flex;
+}
+
+.video-popup-box{
+  width:100%;
+  max-width:900px;
+  border-radius:22px;
+  overflow:hidden;
+  background:#000;
+  border:1px solid rgba(212,175,55,.45);
+  box-shadow:0 0 60px rgba(212,175,55,.35);
+}
+
+.video-popup video{
+  width:100%;
+  aspect-ratio:16/9;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  background:#000;
+}
+
+.close-video{
+  position:fixed;
+  top:18px;
+  right:24px;
+  z-index:1000000;
+  background:rgba(0,0,0,.65);
+  border:1px solid rgba(212,175,55,.5);
+  color:#fff;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  font-size:34px;
+  line-height:1;
+}
+
+/* khusus HP */
+@media(max-width:768px){
+  .video-popup{
+    padding:14px;
+  }
+
+  .video-popup-box{
+    width:100%;
+    max-width:100%;
+    border-radius:18px;
+  }
+
+  .video-popup video{
+    width:100%;
+    aspect-ratio:16/9;
+    max-height:70vh;
+  }
+
+  .close-video{
+    top:14px;
+    right:14px;
+    width:46px;
+    height:46px;
+    font-size:30px;
+  }
+}
