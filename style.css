@@ -1437,3 +1437,49 @@ box-shadow:0 20px 60px rgba(212,175,55,.15);
 
     cursor:pointer;
 }
+/* FIX VIDEO CARD MOBILE */
+@media(max-width:768px){
+
+  .service-card.video-card{
+    padding:14px !important;
+    border-radius:24px !important;
+    overflow:hidden !important;
+  }
+
+  .video-wrapper{
+    width:100% !important;
+    aspect-ratio:16/9 !important;
+    border-radius:20px !important;
+    overflow:hidden !important;
+    background:#000 !important;
+  }
+
+  .promo-video,
+  .portfolio-video,
+  .video-wrapper video{
+    width:100% !important;
+    height:100% !important;
+    aspect-ratio:16/9 !important;
+    object-fit:cover !important;
+    display:block !important;
+    border-radius:20px !important;
+  }
+
+  .service-card.video-card h3{
+    font-size:28px !important;
+    margin-top:26px !important;
+  }
+
+  .service-card.video-card p{
+    font-size:17px !important;
+    line-height:1.7 !important;
+  }
+
+  .sound-btn{
+    width:44px !important;
+    height:44px !important;
+    top:12px !important;
+    right:12px !important;
+    font-size:18px !important;
+  }
+}
