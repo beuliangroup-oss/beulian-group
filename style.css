@@ -1484,3 +1484,7 @@ box-shadow:0 20px 60px rgba(212,175,55,.15);
   }
 }
 object-fit:contain !important;
+.sound-btn.active{
+  background:#d4af37 !important;
+  color:#111 !important;
+} ia
