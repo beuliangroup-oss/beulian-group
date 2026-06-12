@@ -176,7 +176,7 @@ Konsultasi Gratis Sekarang
     muted
     loop
     playsinline
-    onclick="openVideoPopup('assets/video-luxury.mp4')">
+    onclick="openVideoPopup('assets/video-automotive.mp4')">
     <source src="assets/video-automotive.mp4" type="video/mp4">
   </video>
 
@@ -200,7 +200,7 @@ Konsultasi Gratis Sekarang
     muted
     loop
     playsinline
-    onclick="openVideoPopup('assets/video-luxury.mp4')">
+    onclick="openVideoPopup('assets/video-skincare.mp4')">
     <source src="assets/video-skincare.mp4" type="video/mp4">
   </video>
 
@@ -428,6 +428,32 @@ function sendToWhatsApp(event) {
 
   window.open("https://wa.me/62895404870004?text=" + text, "_blank");
 }
+<!-- POPUP VIDEO - cukup satu saja -->
+<div id="videoPopup" class="video-popup">
+  <button class="close-video" onclick="closeVideoPopup()">×</button>
+  <div class="video-popup-box">
+    <video id="popupVideo" controls playsinline></video>
+  </div>
+</div>
+
+<script>
+function sendToWhatsApp(event) {
+  event.preventDefault();
+
+  const nama = document.getElementById("nama").value;
+  const bisnis = document.getElementById("bisnis").value;
+  const whatsapp = document.getElementById("whatsapp").value;
+  const pesan = document.getElementById("pesan").value;
+
+  const text =
+    "Halo Beulian Group,%0A%0A" +
+    "Nama: " + nama + "%0A" +
+    "Bisnis/Brand: " + bisnis + "%0A" +
+    "WhatsApp: " + whatsapp + "%0A" +
+    "Pesan: " + pesan;
+
+  window.open("https://wa.me/62895404870004?text=" + text, "_blank");
+}
 
 function openLightbox(src) {
   document.getElementById("lightbox").style.display = "flex";
@@ -446,15 +472,16 @@ function openImagePopup(src) {
 function closeImagePopup() {
   document.getElementById("imagePopup").style.display = "none";
 }
-  
-    <script>
-function toggleSound(event, videoId, btn){
+
+function toggleSound(event, videoId, btn) {
+  event.preventDefault();
   event.stopPropagation();
 
   const video = document.getElementById(videoId);
+  if (!video) return;
 
   document.querySelectorAll("video").forEach(v => {
-    if(v.id !== videoId){
+    if (v !== video) {
       v.muted = true;
       v.volume = 0;
     }
@@ -467,33 +494,38 @@ function toggleSound(event, videoId, btn){
 
   video.muted = !video.muted;
 
-  if(!video.muted){
+  if (!video.muted) {
     video.volume = 1;
     video.play();
     btn.innerHTML = "🔊";
     btn.classList.add("active");
-  }else{
+  } else {
     video.volume = 0;
     btn.innerHTML = "🔇";
     btn.classList.remove("active");
   }
 }
 
-function openVideoPopup(src){
+function openVideoPopup(src) {
   const popup = document.getElementById("videoPopup");
   const video = document.getElementById("popupVideo");
 
   popup.classList.add("active");
 
+  video.pause();
   video.src = src;
+  video.load();
+
   video.muted = false;
   video.volume = 1;
   video.controls = true;
 
-  video.play();
+  setTimeout(() => {
+    video.play();
+  }, 150);
 }
 
-function closeVideoPopup(){
+function closeVideoPopup() {
   const popup = document.getElementById("videoPopup");
   const video = document.getElementById("popupVideo");
 
@@ -503,14 +535,18 @@ function closeVideoPopup(){
 
   popup.classList.remove("active");
 }
-</script>
-    <div id="videoPopup" class="video-popup">
-  <button class="close-video" onclick="closeVideoPopup()">×</button>
 
-  <div class="video-popup-box">
-    <video id="popupVideo" controls playsinline></video>
-  </div>
-</div>
+function openMenu() {
+  document.getElementById("mobileMenu").classList.add("active");
+  document.getElementById("menuOverlay").classList.add("active");
+}
+
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.remove("active");
+  document.getElementById("menuOverlay").classList.remove("active");
+}
+</script>
+
 
 </body>
 </html>
