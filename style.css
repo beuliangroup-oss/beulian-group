@@ -924,3 +924,80 @@ footer{
     font-size:30px;
   }
 }
+/* FIX DESKTOP CARD 03-07 PREMIUM */
+.premium-project-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:26px !important;
+  align-items:stretch !important;
+}
+
+.premium-project-card{
+  background:#141414 !important;
+  border:1px solid rgba(212,175,55,.28) !important;
+  border-radius:24px !important;
+  padding:26px !important;
+  overflow:hidden !important;
+  min-height:auto !important;
+}
+
+.premium-project-card img{
+  width:100% !important;
+  aspect-ratio:16/9 !important;
+  object-fit:cover !important;
+  border-radius:16px !important;
+  margin-bottom:18px !important;
+}
+
+.premium-project-card.large{
+  grid-column:span 1 !important;
+}
+
+.mini-gallery{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:18px !important;
+}
+
+.mini-gallery img{
+  width:100% !important;
+  aspect-ratio:16/9 !important;
+  object-fit:cover !important;
+  border-radius:16px !important;
+}
+
+/* DESKTOP RAPI */
+@media(min-width:1024px){
+  .premium-project-grid{
+    grid-template-columns:repeat(3,1fr) !important;
+  }
+
+  .premium-project-card{
+    min-height:360px !important;
+  }
+
+  .premium-project-card.card-04{
+    grid-column:span 1 !important;
+    grid-row:span 2 !important;
+  }
+
+  .premium-project-card.card-05,
+  .premium-project-card.card-06,
+  .premium-project-card.card-07{
+    min-height:360px !important;
+  }
+}
+
+/* HP SATU KOLOM */
+@media(max-width:768px){
+  .premium-project-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .premium-project-card,
+  .premium-project-card.card-04{
+    grid-column:auto !important;
+    grid-row:auto !important;
+    min-height:auto !important;
+  }
+}
