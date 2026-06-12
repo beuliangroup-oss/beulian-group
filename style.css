@@ -1273,79 +1273,143 @@ footer p {
     height: 205px;
   }
 }
+/* COPILOT LOGO BULAT - POJOK KIRI 20% DARI BAWAH */
 .copilot-float{
-  position:fixed;
-  left:18px;
-  bottom:18px;
-  z-index:99999;
-  border:none;
-  border-radius:999px;
-  padding:14px 22px;
-  background:linear-gradient(135deg,#bd8424,#f3d37c);
-  color:#111;
-  font-weight:900;
-  cursor:pointer;
-  box-shadow:0 15px 40px rgba(0,0,0,.35);
+  position:fixed !important;
+  left:18px !important;
+  bottom:20vh !important;
+  z-index:999999 !important;
+
+  width:58px !important;
+  height:58px !important;
+  padding:0 !important;
+
+  border-radius:50% !important;
+  border:1px solid rgba(212,175,55,.65) !important;
+
+  background:
+    url("assets/logo-beulian-group.png") center/cover no-repeat,
+    #050505 !important;
+
+  color:transparent !important;
+  font-size:0 !important;
+
+  box-shadow:
+    0 0 22px rgba(212,175,55,.35),
+    0 14px 35px rgba(0,0,0,.45) !important;
+
+  cursor:pointer !important;
 }
 
+/* titik online hijau */
+.copilot-float::after{
+  content:"";
+  position:absolute;
+  top:3px;
+  right:3px;
+  width:12px;
+  height:12px;
+  background:#20d65a;
+  border:2px solid #fff;
+  border-radius:50%;
+}
+
+/* box chat muncul di atas logo */
 .copilot-box{
-  position:fixed;
-  left:18px;
-  bottom:80px;
-  width:320px;
-  max-width:90vw;
-  background:#101010;
-  border:1px solid rgba(212,175,55,.45);
-  border-radius:22px;
-  z-index:99999;
-  overflow:hidden;
-  display:none;
-  box-shadow:0 25px 80px rgba(0,0,0,.55);
+  position:fixed !important;
+  left:18px !important;
+  bottom:calc(20vh + 72px) !important;
+  width:320px !important;
+  max-width:88vw !important;
+
+  background:#101010 !important;
+  border:1px solid rgba(212,175,55,.45) !important;
+  border-radius:22px !important;
+  overflow:hidden !important;
+
+  display:none !important;
+  z-index:999999 !important;
+
+  box-shadow:0 25px 80px rgba(0,0,0,.55) !important;
 }
 
 .copilot-box.active{
-  display:block;
+  display:block !important;
 }
 
 .copilot-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 18px;
-  background:linear-gradient(135deg,#1b1b1b,#2b1a05);
-  color:#d4af37;
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:center !important;
+  padding:14px 18px !important;
+  background:linear-gradient(135deg,#171717,#2b1a05) !important;
+  color:#d4af37 !important;
 }
 
 .copilot-header button{
-  background:none;
-  border:none;
-  color:#fff;
-  font-size:24px;
-  cursor:pointer;
+  background:none !important;
+  border:none !important;
+  color:#fff !important;
+  font-size:24px !important;
+  cursor:pointer !important;
 }
 
 .copilot-body{
-  padding:18px;
+  padding:18px !important;
 }
 
 .copilot-body p{
-  color:#ddd;
-  margin-bottom:16px;
+  color:#ddd !important;
+  font-size:15px !important;
+  line-height:1.6 !important;
+  margin-bottom:14px !important;
 }
 
 .copilot-body button{
-  width:100%;
-  margin-bottom:10px;
-  padding:12px;
-  border-radius:14px;
-  border:1px solid rgba(212,175,55,.35);
-  background:#181818;
-  color:#fff;
-  font-weight:700;
-  cursor:pointer;
+  width:100% !important;
+  margin-bottom:10px !important;
+  padding:12px !important;
+  border-radius:14px !important;
+  border:1px solid rgba(212,175,55,.35) !important;
+  background:#181818 !important;
+  color:#fff !important;
+  font-weight:700 !important;
+  cursor:pointer !important;
 }
 
 .copilot-body button:hover{
-  background:#d4af37;
-  color:#111;
+  background:#d4af37 !important;
+  color:#111 !important;
+}
+
+/* HP */
+@media(max-width:768px){
+  .copilot-float{
+    width:52px !important;
+    height:52px !important;
+    left:16px !important;
+    bottom:20vh !important;
+  }
+
+  .copilot-box{
+    left:16px !important;
+    bottom:calc(20vh + 66px) !important;
+    width:300px !important;
+  }
+.copilot-float{
+  animation:copilotGlow 3s infinite ease-in-out;
+}
+
+@keyframes copilotGlow{
+  0%{
+    box-shadow:0 0 10px rgba(212,175,55,.3);
+  }
+  50%{
+    box-shadow:
+    0 0 25px rgba(212,175,55,.8),
+    0 0 40px rgba(212,175,55,.4);
+  }
+  100%{
+    box-shadow:0 0 10px rgba(212,175,55,.3);
+  }
 }
