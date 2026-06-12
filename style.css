@@ -116,7 +116,7 @@ section {
 
 .lead {
   max-width: 780px;
-  color: #e9e9e9;
+  color: #e9e9e9; ini
   font-size: 20px;
   margin-bottom: 34px;
 }
@@ -1829,6 +1829,79 @@ font-size:18px;
 
 .badge{
 font-size:13px;
+}
+
+}
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.hero-bg{
+
+width:650px;
+height:650px;
+
+right:-240px;
+
+opacity:.10;
+
+}
+
+.brand img{
+
+width:55px;
+height:55px;
+
+}
+
+.brand h3{
+
+font-size:18px;
+
+}
+
+.hero-content{
+
+padding:
+50px
+25px
+100px;
+
+}
+
+.hero-content h1{
+
+font-size:62px;
+
+line-height:1;
+
+}
+
+.hero-content p{
+
+font-size:18px;
+
+}
+
+.section h2{
+
+font-size:42px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.btn-gold,
+.btn-outline{
+
+text-align:center;
+
 }
 
 }
