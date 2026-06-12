@@ -1272,144 +1272,169 @@ footer p {
   .mini-gallery img {
     height: 205px;
   }
-}
-/* COPILOT LOGO BULAT - POJOK KIRI 20% DARI BAWAH */
+/* =========================
+   BEULIAN COPILOT PREMIUM
+========================= */
+
 .copilot-float{
-  position:fixed !important;
-  left:18px !important;
-  bottom:20vh !important;
-  z-index:999999 !important;
+    position:fixed;
+    left:18px;
+    bottom:20vh;
 
-  width:58px !important;
-  height:58px !important;
-  padding:0 !important;
+    width:70px;
+    height:70px;
 
-  border-radius:50% !important;
-  border:1px solid rgba(212,175,55,.65) !important;
+    border:none;
+    background:none;
+    padding:0;
 
-  background:
-    url("assets/logo-beulian-group.png") center/cover no-repeat,
-    #050505 !important;
+    border-radius:50%;
+    cursor:pointer;
 
-  color:transparent !important;
-  font-size:0 !important;
+    z-index:999999;
 
-  box-shadow:
-    0 0 22px rgba(212,175,55,.35),
-    0 14px 35px rgba(0,0,0,.45) !important;
-
-  cursor:pointer !important;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-/* titik online hijau */
-.copilot-float::after{
-  content:"";
-  position:absolute;
-  top:3px;
-  right:3px;
-  width:12px;
-  height:12px;
-  background:#20d65a;
-  border:2px solid #fff;
-  border-radius:50%;
+/* LOGO */
+.copilot-float img{
+    width:62px;
+    height:62px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    position:relative;
+    z-index:3;
+
+    box-shadow:
+    0 0 15px rgba(212,175,55,.5),
+    0 0 35px rgba(212,175,55,.3);
+
+    animation:logoGlow 3s ease infinite;
 }
 
-/* box chat muncul di atas logo */
-.copilot-box{
-  position:fixed !important;
-  left:18px !important;
-  bottom:calc(20vh + 72px) !important;
-  width:320px !important;
-  max-width:88vw !important;
+/* RING BERPUTAR */
+.copilot-ring{
+    position:absolute;
 
-  background:#101010 !important;
-  border:1px solid rgba(212,175,55,.45) !important;
-  border-radius:22px !important;
-  overflow:hidden !important;
+    width:78px;
+    height:78px;
 
-  display:none !important;
-  z-index:999999 !important;
+    border-radius:50%;
 
-  box-shadow:0 25px 80px rgba(0,0,0,.55) !important;
+    border:
+    2px solid rgba(212,175,55,.25);
+
+    border-top:
+    2px solid #d4af37;
+
+    border-right:
+    2px solid #f4d77a;
+
+    animation:
+    spinRing 6s linear infinite;
+
+    z-index:1;
 }
 
-.copilot-box.active{
-  display:block !important;
+/* TITIK ONLINE */
+.copilot-online{
+    position:absolute;
+
+    width:14px;
+    height:14px;
+
+    top:10px;
+    right:8px;
+
+    background:#32d95f;
+
+    border-radius:50%;
+    border:2px solid white;
+
+    z-index:5;
+
+    box-shadow:
+    0 0 10px #32d95f;
 }
 
-.copilot-header{
-  display:flex !important;
-  justify-content:space-between !important;
-  align-items:center !important;
-  padding:14px 18px !important;
-  background:linear-gradient(135deg,#171717,#2b1a05) !important;
-  color:#d4af37 !important;
+/* GLOW */
+@keyframes logoGlow{
+
+    0%{
+        transform:scale(1);
+        box-shadow:
+        0 0 12px rgba(212,175,55,.35);
+    }
+
+    50%{
+        transform:scale(1.05);
+        box-shadow:
+        0 0 25px rgba(212,175,55,.8),
+        0 0 40px rgba(212,175,55,.4);
+    }
+
+    100%{
+        transform:scale(1);
+        box-shadow:
+        0 0 12px rgba(212,175,55,.35);
+    }
 }
 
-.copilot-header button{
-  background:none !important;
-  border:none !important;
-  color:#fff !important;
-  font-size:24px !important;
-  cursor:pointer !important;
+/* PUTAR RING */
+@keyframes spinRing{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
 }
 
-.copilot-body{
-  padding:18px !important;
+/* HOVER */
+.copilot-float:hover{
+    transform:scale(1.08);
 }
 
-.copilot-body p{
-  color:#ddd !important;
-  font-size:15px !important;
-  line-height:1.6 !important;
-  margin-bottom:14px !important;
-}
+/* TABLET */
+@media(max-width:1024px){
 
-.copilot-body button{
-  width:100% !important;
-  margin-bottom:10px !important;
-  padding:12px !important;
-  border-radius:14px !important;
-  border:1px solid rgba(212,175,55,.35) !important;
-  background:#181818 !important;
-  color:#fff !important;
-  font-weight:700 !important;
-  cursor:pointer !important;
-}
+    .copilot-float{
+        left:16px;
+        bottom:20vh;
+    }
 
-.copilot-body button:hover{
-  background:#d4af37 !important;
-  color:#111 !important;
 }
 
 /* HP */
 @media(max-width:768px){
-  .copilot-float{
-    width:52px !important;
-    height:52px !important;
-    left:16px !important;
-    bottom:20vh !important;
-  }
 
-  .copilot-box{
-    left:16px !important;
-    bottom:calc(20vh + 66px) !important;
-    width:300px !important;
-  }
-.copilot-float{
-  animation:copilotGlow 3s infinite ease-in-out;
-}
+    .copilot-float{
+        left:14px;
+        bottom:20vh;
 
-@keyframes copilotGlow{
-  0%{
-    box-shadow:0 0 10px rgba(212,175,55,.3);
-  }
-  50%{
-    box-shadow:
-    0 0 25px rgba(212,175,55,.8),
-    0 0 40px rgba(212,175,55,.4);
-  }
-  100%{
-    box-shadow:0 0 10px rgba(212,175,55,.3);
-  }
+        width:62px;
+        height:62px;
+    }
+
+    .copilot-float img{
+        width:55px;
+        height:55px;
+    }
+
+    .copilot-ring{
+        width:68px;
+        height:68px;
+    }
+
+    .copilot-online{
+        width:12px;
+        height:12px;
+    }
+
 }
