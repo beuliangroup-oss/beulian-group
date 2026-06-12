@@ -307,9 +307,9 @@ p {
   background-size: min(900px, 68vw) auto !important;
 
   /* POSISI LOGO BESAR DI KANAN */
-  background-position: right 4% center !important;
+  background-position: center 4% center !important;
 
-  opacity: 0.92;
+  opacity: 0.98;
   transform: none !important;
 }
 
@@ -323,7 +323,7 @@ p {
     linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.96) 0%,
-      rgba(0, 0, 0, 0.82) 38%,
+      rgba(0, 0, 0, 0.72) 38%,
       rgba(0, 0, 0, 0.50) 68%,
       rgba(0, 0, 0, 0.28) 100%
     );
