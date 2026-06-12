@@ -1001,3 +1001,110 @@ footer{
     min-height:auto !important;
   }
 }
+/* FIX VIDEO SOUND & FULLSCREEN */
+.video-wrapper{
+  position:relative !important;
+  width:100% !important;
+  aspect-ratio:16/9 !important;
+  overflow:hidden !important;
+  border-radius:18px !important;
+  background:#000 !important;
+}
+
+.portfolio-video,
+.promo-video,
+.video-wrapper video{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block !important;
+  cursor:pointer !important;
+  border-radius:18px !important;
+}
+
+.sound-btn{
+  position:absolute !important;
+  top:12px !important;
+  right:12px !important;
+  z-index:20 !important;
+  width:46px !important;
+  height:46px !important;
+  border-radius:50% !important;
+  border:1px solid rgba(212,175,55,.45) !important;
+  background:rgba(0,0,0,.75) !important;
+  color:#fff !important;
+  font-size:18px !important;
+  cursor:pointer !important;
+}
+
+.sound-btn.active{
+  background:#d4af37 !important;
+  color:#111 !important;
+}
+
+.video-popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  background:rgba(0,0,0,.94);
+  justify-content:center;
+  align-items:center;
+  padding:22px;
+}
+
+.video-popup.active{
+  display:flex;
+}
+
+.video-popup-box{
+  width:100%;
+  max-width:1100px;
+  background:#000;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(212,175,55,.45);
+  box-shadow:0 0 70px rgba(212,175,55,.35);
+}
+
+.video-popup video{
+  width:100%;
+  aspect-ratio:16/9;
+  display:block;
+  object-fit:contain;
+  background:#000;
+}
+
+.close-video{
+  position:fixed;
+  top:22px;
+  right:26px;
+  z-index:1000000;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  border:1px solid rgba(212,175,55,.45);
+  background:rgba(0,0,0,.75);
+  color:#fff;
+  font-size:34px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  .video-popup{
+    padding:14px;
+  }
+
+  .video-popup-box{
+    max-width:100%;
+    border-radius:18px;
+  }
+
+  .close-video{
+    width:46px;
+    height:46px;
+    top:14px;
+    right:14px;
+    font-size:30px;
+  }
+}
