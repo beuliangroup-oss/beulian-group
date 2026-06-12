@@ -17,49 +17,82 @@ rel="noopener">
 WhatsApp
 </a>
 
-<!-- HEADER --><header class="hero" id="beranda">
-  <nav class="navbar"><a class="brand" href="#beranda">
-  <img src="assets/logo-beulian-group.png" alt="Logo Beulian Group">
-  <div>
-    <strong>BEULIAN GROUP</strong>
-    <small>Premium Creative Digital Agency</small>
+<!-- HEADER -->
+  <header class="hero">
+
+  <nav class="navbar">
+
+    <div class="brand">
+      <img src="assets/logo-beulian-group.png">
+      <div>
+        <h2>BEULIAN GROUP</h2>
+        <span>Premium Creative Digital Agency</span>
+      </div>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+      ☰
+    </button>
+
+  </nav>
+
+  <div id="mobileMenu" class="mobile-menu">
+
+    <a href="index.html">Beranda</a>
+
+    <a href="creative-ads.html">
+      Creative Ads
+    </a>
+
+    <a href="digital-branding.html">
+      Digital Branding
+    </a>
+
+    <a href="#kontak">
+      Kontak
+    </a>
+
   </div>
-</a>
 
-<div class="menu">
-  <a href="#tentang">Tentang</a>
-  <a href="#layanan">Layanan</a>
-  <a href="#portfolio">Portofolio</a>
-  <a href="#testimoni">Testimoni</a>
-  <a href="#kontak">Kontak</a>
-</div>
+  <div class="hero-content">
 
-  </nav>  <section class="hero-content">
-    <div class="hero-copy">
-      <p class="label">Creative Ads • Digital Branding • Business Growth</p>  <h1>Brand Anda terlihat lebih mahal, profesional, dan siap dipercaya.</h1>
+    <div class="badge">
+      CREATIVE ADS • DIGITAL BRANDING • BUSINESS GROWTH
+    </div>
 
-  <p class="lead">
-    Beulian Group membantu bisnis membangun visual promosi premium melalui video iklan AI,
-    desain campaign, landing page, copywriting, dan konten media sosial yang siap jual.
-  </p>
+    <h1>
+      Brand Anda terlihat
+      <span>lebih mahal, profesional</span>,
+      dan siap dipercaya.
+    </h1>
 
-  <div class="actions">
-    <a class="btn gold" href="mailto:beuliangroup@gmail.com">Konsultasi via Email</a>
-    <a class="btn outline" href="#layanan">Lihat Layanan</a>
+    <p>
+      Beulian Group membantu bisnis membangun visual promosi premium
+      melalui video iklan AI, desain campaign, landing page,
+      copywriting, dan konten media sosial yang siap jual.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="https://wa.me/62895404870004"
+         class="btn-gold">
+
+         KONSULTASI GRATIS
+
+      </a>
+
+      <a href="#layanan"
+         class="btn-outline">
+
+         LIHAT LAYANAN
+
+      </a>
+
+    </div>
+
   </div>
-</div>
 
-<div class="premium-card">
-  <p class="card-top">Signature Package</p>
-  <h2>AI Creative Ads</h2>
-  <ul>
-    <li>Konsep iklan premium</li>
-    <li>Video promosi produk & jasa</li>
-    <li>Copywriting hard selling</li>
-    <li>Konten TikTok, Instagram, Shopee</li>
-    <li>Export visual siap publish</li>
-  </ul>
-</div>
+</header>
 
   </section>
 </header><main><!-- CTA PREMIUM --><section class="cta-premium">
@@ -430,5 +463,14 @@ document.querySelectorAll(".menu a").forEach(link => {
     }, 1200);
   });
 });
+  <script>
+function toggleMenu(){
+
+document
+.getElementById("mobileMenu")
+.classList.toggle("show");
+
+}
+</script>
 </script></body>
 </html>
