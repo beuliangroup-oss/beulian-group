@@ -1123,4 +1123,71 @@ footer{
     font-size:17px !important;
   }
 }
+/* FIX PORTFOLIO VIDEO DESKTOP & MOBILE */
+#portfolio .portfolio-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  gap:34px !important;
+  align-items:start !important;
+}
+
+#portfolio .portfolio-item{
+  width:100% !important;
+  background:#141414 !important;
+  border:1px solid rgba(212,175,55,.32) !important;
+  border-radius:24px !important;
+  padding:26px !important;
+  overflow:hidden !important;
+  text-align:center !important;
+}
+
+#portfolio .video-wrapper{
+  width:100% !important;
+  aspect-ratio:16/9 !important;
+  border-radius:18px !important;
+  overflow:hidden !important;
+  margin-bottom:22px !important;
+  background:#000 !important;
+}
+
+#portfolio .portfolio-video,
+#portfolio .video-wrapper video{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block !important;
+  border-radius:18px !important;
+}
+
+#portfolio .portfolio-item h3{
+  color:#d4af37 !important;
+  font-size:26px !important;
+  margin:12px 0 10px !important;
+  padding:0 !important;
+  text-align:center !important;
+}
+
+#portfolio .portfolio-item p{
+  color:#ddd !important;
+  font-size:17px !important;
+  line-height:1.6 !important;
+  margin:0 !important;
+  text-align:center !important;
+}
+
+/* MOBILE: semua video satu kolom, ukuran sama */
+@media(max-width:768px){
+  #portfolio .portfolio-grid{
+    grid-template-columns:1fr !important;
+    gap:28px !important;
+  }
+
+  #portfolio .portfolio-item{
+    padding:18px !important;
+    border-radius:22px !important;
+  }
+
+  #portfolio .portfolio-item h3{
+    font-size:24px !important;
+  }
 }
