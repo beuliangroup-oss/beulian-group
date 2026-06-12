@@ -1279,7 +1279,7 @@ footer p {
 .copilot-float{
     position:fixed;
     left:18px;
-    bottom:20vh;
+    bottom:15vh;
 
     width:70px;
     height:70px;
@@ -1401,13 +1401,36 @@ footer p {
     transform:scale(1.08);
 }
 
-/* TABLET */
-@media(max-width:1024px){
+/* ==================================
+   TABLET (769px - 1024px)
+================================== */
 
-    .copilot-float{
-        left:16px;
-        bottom:20vh;
-    }
+@media (min-width:769px) and (max-width:1024px){
+
+  .copilot-float{
+      left:25px;
+      bottom:20vh;
+
+      width:85px;
+      height:85px;
+  }
+
+  .copilot-float img{
+      width:75px;
+      height:75px;
+  }
+
+  .copilot-ring{
+      width:95px;
+      height:95px;
+  }
+
+  .copilot-online{
+      width:15px;
+      height:15px;
+      top:10px;
+      right:8px;
+  }
 
 }
 
@@ -1436,5 +1459,44 @@ footer p {
         width:12px;
         height:12px;
     }
+
+/* ==================================
+   DESKTOP (1025px+)
+================================== */
+
+@media (min-width:1025px){
+
+  .copilot-float{
+      left:30px;
+      bottom:20vh;
+
+      width:95px;
+      height:95px;
+
+      transition:.35s ease;
+  }
+
+  .copilot-float img{
+      width:85px;
+      height:85px;
+  }
+
+  .copilot-ring{
+      width:108px;
+      height:108px;
+      border-width:3px;
+  }
+
+  .copilot-online{
+      width:16px;
+      height:16px;
+
+      top:12px;
+      right:10px;
+  }
+
+  .copilot-float:hover{
+      transform:scale(1.12);
+  }
 
 }
