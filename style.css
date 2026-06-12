@@ -103,18 +103,74 @@ video{
   font-size:14px;
   margin-top:4px;
 }
-
+/* DESKTOP */
 .menu{
-  display:flex;
-  align-items:center;
-  gap:28px;
+    display:flex;
+    gap:30px;
+    align-items:center;
 }
 
 .menu a{
-  color:#fff;
-  font-size:14px;
-  font-weight:800;
-  transition:.3s;
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#d4af37;
+}
+
+/* HAMBURGER */
+.menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    color:#d4af37;
+    font-size:34px;
+    cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .menu{
+        display:none !important;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .mobile-menu{
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:280px;
+        height:100vh;
+        background:#0f0f0f;
+        z-index:99999;
+        transition:.4s;
+        padding-top:90px;
+        border-left:1px solid rgba(212,175,55,.25);
+    }
+
+    .mobile-menu.show{
+        right:0;
+    }
+
+    .mobile-menu a{
+        display:block;
+        padding:18px 30px;
+        color:#fff;
+        border-bottom:1px solid rgba(255,255,255,.05);
+        font-size:16px;
+    }
+
+    .mobile-menu a:hover{
+        background:#171717;
+        color:#d4af37;
+    }
 }
 
 .menu a:hover{
