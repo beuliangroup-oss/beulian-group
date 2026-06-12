@@ -732,11 +732,13 @@
 
 </button>
 
-
 <script>
 function toggleCopilot(){
-  document.getElementById("copilotBox").classList.toggle("active");
-}
+
+    const box =
+    document.getElementById("copilotBox");
+
+    box.classList.toggle("active");
 
 function sendCopilot(text){
   const url = "https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20" + encodeURIComponent(text);
