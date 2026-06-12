@@ -1634,3 +1634,201 @@ object-fit:contain !important;
 }
 
 }
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+font-family:'Poppins',sans-serif;
+color:#fff;
+overflow-x:hidden;
+}
+
+.hero{
+min-height:100vh;
+position:relative;
+padding:30px;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+right:-200px;
+top:50px;
+width:700px;
+height:700px;
+
+background:url("assets/logo-beulian-group.png")
+center/contain no-repeat;
+
+opacity:.12;
+
+pointer-events:none;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:relative;
+z-index:10;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.brand img{
+width:70px;
+height:70px;
+}
+
+.brand h2{
+font-size:30px;
+letter-spacing:4px;
+color:#d4af37;
+}
+
+.brand span{
+font-size:15px;
+color:#fff;
+}
+
+.menu-btn{
+background:none;
+border:none;
+font-size:40px;
+color:#d4af37;
+cursor:pointer;
+}
+
+.mobile-menu{
+position:fixed;
+top:0;
+right:-100%;
+width:280px;
+height:100%;
+background:#111;
+transition:.4s;
+z-index:999;
+padding-top:120px;
+}
+
+.mobile-menu.show{
+right:0;
+}
+
+.mobile-menu a{
+display:block;
+padding:20px 30px;
+color:white;
+text-decoration:none;
+font-size:18px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.mobile-menu a:hover{
+background:#1b1b1b;
+color:#d4af37;
+}
+
+.hero-content{
+margin-top:80px;
+position:relative;
+z-index:5;
+max-width:650px;
+}
+
+.badge{
+display:inline-block;
+padding:12px 24px;
+border:1px solid #d4af37;
+border-radius:50px;
+color:#d4af37;
+margin-bottom:30px;
+font-size:15px;
+}
+
+.hero-content h1{
+font-size:72px;
+line-height:1.15;
+font-family:Georgia,serif;
+margin-bottom:25px;
+}
+
+.hero-content h1 span{
+color:#d4af37;
+}
+
+.hero-content p{
+font-size:22px;
+line-height:1.8;
+color:#ddd;
+margin-bottom:40px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn-gold{
+background:#d4af37;
+color:#000;
+padding:18px 35px;
+border-radius:12px;
+font-weight:700;
+text-decoration:none;
+}
+
+.btn-outline{
+border:1px solid #d4af37;
+color:#fff;
+padding:18px 35px;
+border-radius:12px;
+text-decoration:none;
+}
+
+@media(max-width:768px){
+
+.hero{
+padding:25px;
+}
+
+.brand img{
+width:60px;
+height:60px;
+}
+
+.brand h2{
+font-size:22px;
+}
+
+.hero::before{
+width:500px;
+height:500px;
+right:-180px;
+top:150px;
+}
+
+.hero-content h1{
+font-size:58px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+.badge{
+font-size:13px;
+}
+
+}
