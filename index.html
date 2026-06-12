@@ -156,7 +156,7 @@ Konsultasi Gratis Sekarang
         muted
         loop
         playsinline
-        onclick="openVideoPopup('assets/video-luxury.mp4')">
+        onclick="openVideoPopup(this.querySelector('source').src)"
         <source src="assets/video-luxury.mp4" type="video/mp4">
       </video>
 
@@ -181,7 +181,7 @@ Konsultasi Gratis Sekarang
         muted
         loop
         playsinline
-        onclick="openVideoPopup('assets/video-automotive.mp4')">
+        onclick="openVideoPopup(this.querySelector('source').src)"
         <source src="assets/video-automotive.mp4" type="video/mp4">
       </video>
 
@@ -206,7 +206,7 @@ Konsultasi Gratis Sekarang
         muted
         loop
         playsinline
-        onclick="openVideoPopup('assets/video-skincare.mp4')">
+        onclick="openVideoPopup(this.querySelector('source').src)"
         <source src="assets/video-skincare.mp4" type="video/mp4">
       </video>
 
@@ -249,11 +249,9 @@ Konsultasi Gratis Sekarang
           muted
           loop
           playsinline
-          onclick="openVideoPopup('assets/video-iklan-ai.mp4')">
+          onclick="openVideoPopup(this.querySelector('source').src)"
 
           <source src="assets/video-iklan-ai.mp4" type="video/mp4">
-        </video>
-
         <button
           type="button"
           class="sound-btn"
@@ -511,47 +509,69 @@ function toggleSound(event, videoId, btn) {
     btn.classList.remove("active");
   }
 }
-
-function openVideoPopup(src) {
-  const popup = document.getElementById("videoPopup");
-  const video = document.getElementById("popupVideo");
-
-  popup.classList.add("active");
-
-  video.pause();
-  video.src = src;
-  video.load();
-
-  video.muted = false;
-  video.volume = 1;
-  video.controls = true;
-
-  setTimeout(() => {
-    video.play();
-  }, 150);
-}
-
-function closeVideoPopup() {
-  const popup = document.getElementById("videoPopup");
-  const video = document.getElementById("popupVideo");
-
-  video.pause();
-  video.removeAttribute("src");
-  video.load();
-
-  popup.classList.remove("active");
-}
-
-function openMenu() {
-  document.getElementById("mobileMenu").classList.add("active");
-  document.getElementById("menuOverlay").classList.add("active");
-}
-
-function closeMenu() {
-  document.getElementById("mobileMenu").classList.remove("active");
-  document.getElementById("menuOverlay").classList.remove("active");
-}
 </script>
+    <div id="videoPopup" class="video-popup">
+
+    <button
+    class="close-video"
+    onclick="closeVideoPopup()">
+    ×
+    </button>
+
+    <div class="video-popup-box">
+
+        <video
+        id="popupVideo"
+        controls
+        playsinline>
+        </video>
+
+    </div>
+
+</div>
+    function openVideoPopup(src){
+
+    const popup =
+    document.getElementById("videoPopup");
+
+    const video =
+    document.getElementById("popupVideo");
+
+    popup.classList.add("active");
+
+    video.src = src;
+
+    video.muted = false;
+    video.volume = 1;
+
+    video.play();
+
+    if(video.requestFullscreen){
+        video.requestFullscreen();
+    }
+
+}
+
+function closeVideoPopup(){
+
+    const popup =
+    document.getElementById("videoPopup");
+
+    const video =
+    document.getElementById("popupVideo");
+
+    video.pause();
+
+    video.removeAttribute("src");
+    video.load();
+
+    popup.classList.remove("active");
+
+    if(document.fullscreenElement){
+        document.exitFullscreen();
+    }
+
+}
 
 
 </body>
