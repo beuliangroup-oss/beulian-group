@@ -309,7 +309,7 @@ p {
   /* POSISI LOGO BESAR DI KANAN */
   background-position: center 4% center !important;
 
-  opacity: 0.98;
+  opacity: 1;
   transform: none !important;
 }
 
@@ -414,7 +414,7 @@ p {
       linear-gradient(
         90deg,
         rgba(0, 0, 0, 0.96) 0%,
-        rgba(0, 0, 0, 0.82) 52%,
+        rgba(0, 0, 0, 0.72) 52%,
         rgba(0, 0, 0, 0.38) 100%
       );
   }
@@ -436,7 +436,7 @@ p {
     /* LOGO BESAR DIBUAT TERLIHAT DI BAGIAN ATAS */
     background-position: center 42px !important;
 
-    opacity: 0.78;
+    opacity: 0.98;
   }
 
   .hero::before {
@@ -444,7 +444,7 @@ p {
       linear-gradient(
         180deg,
         rgba(0, 0, 0, 0.58) 0%,
-        rgba(0, 0, 0, 0.76) 34%,
+        rgba(0, 0, 0, 0.72) 34%,
         rgba(0, 0, 0, 0.96) 100%
       );
   }
