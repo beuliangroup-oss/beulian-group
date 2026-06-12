@@ -145,82 +145,44 @@ Konsultasi Gratis Sekarang
     <h2>Portfolio Video Iklan AI</h2>
     <p class="section-desc">Beberapa karya terbaik yang telah kami kerjakan.</p>
 
- <div class="portfolio-grid">
+    <div class="portfolio-grid">
 
-  <div class="portfolio-item">
-    <div class="video-wrapper">
-      <video
-        id="video1"
-        class="portfolio-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        onclick="openVideoPopup(this.querySelector('source').src)"
-        <source src="assets/video-luxury.mp4" type="video/mp4">
-      </video>
+      <div class="portfolio-item">
+        <div class="video-wrapper">
+          <video id="video1" class="portfolio-video" autoplay muted loop playsinline onclick="openVideoPopup('assets/video-luxury.mp4')">
+            <source src="assets/video-luxury.mp4" type="video/mp4">
+          </video>
+          <button type="button" class="sound-btn" onclick="toggleSound(event,'video1',this)">🔇</button>
+        </div>
+        <h3>Video Produk Luxury</h3>
+        <p>Iklan AI premium untuk produk eksklusif.</p>
+      </div>
 
-      <button
-        type="button"
-        class="sound-btn"
-        onclick="toggleSound(event, 'video1', this)">
-        🔇
-      </button>
+      <div class="portfolio-item">
+        <div class="video-wrapper">
+          <video id="video2" class="portfolio-video" autoplay muted loop playsinline onclick="openVideoPopup('assets/video-automotive.mp4')">
+            <source src="assets/video-automotive.mp4" type="video/mp4">
+          </video>
+          <button type="button" class="sound-btn" onclick="toggleSound(event,'video2',this)">🔇</button>
+        </div>
+        <h3>Video Automotive</h3>
+        <p>Visual cinematic untuk brand otomotif.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <div class="video-wrapper">
+          <video id="video3" class="portfolio-video" autoplay muted loop playsinline onclick="openVideoPopup('assets/video-skincare.mp4')">
+            <source src="assets/video-skincare.mp4" type="video/mp4">
+          </video>
+          <button type="button" class="sound-btn" onclick="toggleSound(event,'video3',this)">🔇</button>
+        </div>
+        <h3>Video Skincare Premium</h3>
+        <p>Konten luxury untuk produk kecantikan.</p>
+      </div>
+
     </div>
-
-    <h3>Video Produk Luxury</h3>
-    <p>Iklan AI premium untuk produk eksklusif.</p>
   </div>
-
-  <div class="portfolio-item">
-    <div class="video-wrapper">
-      <video
-        id="video2"
-        class="portfolio-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        onclick="openVideoPopup(this.querySelector('source').src)"
-        <source src="assets/video-automotive.mp4" type="video/mp4">
-      </video>
-
-      <button
-        type="button"
-        class="sound-btn"
-        onclick="toggleSound(event, 'video2', this)">
-        🔇
-      </button>
-    </div>
-
-    <h3>Video Automotive</h3>
-    <p>Visual cinematic untuk brand otomotif.</p>
-  </div>
-
-  <div class="portfolio-item">
-    <div class="video-wrapper">
-      <video
-        id="video3"
-        class="portfolio-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        onclick="openVideoPopup(this.querySelector('source').src)"
-        <source src="assets/video-skincare.mp4" type="video/mp4">
-      </video>
-
-      <button
-        type="button"
-        class="sound-btn"
-        onclick="toggleSound(event, 'video3', this)">
-        🔇
-      </button>
-    </div>
-
-    <h3>Video Skincare Premium</h3>
-    <p>Konten luxury untuk produk kecantikan.</p>
-  </div>
+</section>
 
 </div>
 
@@ -240,25 +202,14 @@ Konsultasi Gratis Sekarang
 
     <div class="premium-project-card card-01">
       <span>01</span>
+<div class="video-wrapper">
+  <video id="video4" class="promo-video" autoplay muted loop playsinline onclick="openVideoPopup('assets/video-iklan-ai.mp4')">
+    <source src="assets/video-iklan-ai.mp4" type="video/mp4">
+  </video>
 
-      <div class="video-wrapper">
-        <video
-          id="video4"
-          class="promo-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          onclick="openVideoPopup(this.querySelector('source').src)"
+  <button type="button" class="sound-btn" onclick="toggleSound(event,'video4',this)">🔇</button>
+</div>
 
-          <source src="assets/video-iklan-ai.mp4" type="video/mp4">
-        <button
-          type="button"
-          class="sound-btn"
-          onclick="toggleSound(event, 'video4', this)">
-          🔇
-        </button>
-      </div>
 
       <h3>Video Iklan AI</h3>
       <p>Video promosi cinematic untuk produk, jasa, campaign, dan penawaran khusus.</p>
@@ -458,34 +409,23 @@ function sendToWhatsApp(event) {
 
   window.open("https://wa.me/62895404870004?text=" + text, "_blank");
 }
+<div id="videoPopup" class="video-popup">
+  <button class="close-video" onclick="closeVideoPopup()">×</button>
+  <div class="video-popup-box">
+    <video id="popupVideo" controls playsinline></video>
+  </div>
+</div>
 
-function openLightbox(src) {
-  document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = src;
-}
-
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
-}
-
-function openImagePopup(src) {
-  document.getElementById("imagePopup").style.display = "flex";
-  document.getElementById("popupImage").src = src;
-}
-
-function closeImagePopup() {
-  document.getElementById("imagePopup").style.display = "none";
-}
-
-function toggleSound(event, videoId, btn) {
+<script>
+function toggleSound(event, videoId, btn){
   event.preventDefault();
   event.stopPropagation();
 
   const video = document.getElementById(videoId);
-  if (!video) return;
+  if(!video) return;
 
   document.querySelectorAll("video").forEach(v => {
-    if (v !== video) {
+    if(v !== video){
       v.muted = true;
       v.volume = 0;
     }
@@ -498,80 +438,47 @@ function toggleSound(event, videoId, btn) {
 
   video.muted = !video.muted;
 
-  if (!video.muted) {
+  if(!video.muted){
     video.volume = 1;
     video.play();
     btn.innerHTML = "🔊";
     btn.classList.add("active");
-  } else {
-    video.volume = 0;
-    btn.innerHTML = "🔇";
-    btn.classList.remove("active");
   }
 }
-</script>
-    <div id="videoPopup" class="video-popup">
 
-    <button
-    class="close-video"
-    onclick="closeVideoPopup()">
-    ×
-    </button>
+function openVideoPopup(src){
+  const popup = document.getElementById("videoPopup");
+  const video = document.getElementById("popupVideo");
 
-    <div class="video-popup-box">
-
-        <video
-        id="popupVideo"
-        controls
-        playsinline>
-        </video>
-
-    </div>
-
-</div>
-    function openVideoPopup(src){
-
-    const popup =
-    document.getElementById("videoPopup");
-
-    const video =
-    document.getElementById("popupVideo");
-
-    popup.classList.add("active");
-
-    video.src = src;
-
-    video.muted = false;
-    video.volume = 1;
-
-    video.play();
-
-    if(video.requestFullscreen){
-        video.requestFullscreen();
-    }
-
+  popup.classList.add("active");
+  video.src = src;
+  video.muted = false;
+  video.volume = 1;
+  video.controls = true;
+  video.play();
 }
 
 function closeVideoPopup(){
+  const popup = document.getElementById("videoPopup");
+  const video = document.getElementById("popupVideo");
 
-    const popup =
-    document.getElementById("videoPopup");
-
-    const video =
-    document.getElementById("popupVideo");
-
-    video.pause();
-
-    video.removeAttribute("src");
-    video.load();
-
-    popup.classList.remove("active");
-
-    if(document.fullscreenElement){
-        document.exitFullscreen();
-    }
-
+  video.pause();
+  video.removeAttribute("src");
+  video.load();
+  popup.classList.remove("active");
 }
+
+function openLightbox(src){
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+  
 
 
 </body>
