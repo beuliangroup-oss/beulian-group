@@ -696,6 +696,44 @@
       }
     });
   </script>
+  <!-- BEULIAN COPILOT -->
+<div class="copilot-box" id="copilotBox">
+  <div class="copilot-header">
+    <strong>Beulian Copilot</strong>
+    <button onclick="toggleCopilot()">×</button>
+  </div>
+
+  <div class="copilot-body">
+    <p>Halo, saya Beulian Copilot. Mau konsultasi layanan apa?</p>
+
+    <button onclick="sendCopilot('Saya ingin jasa video iklan AI')">
+      Video Iklan AI
+    </button>
+
+    <button onclick="sendCopilot('Saya ingin desain branding premium')">
+      Digital Branding
+    </button>
+
+    <button onclick="sendCopilot('Saya ingin landing page brand')">
+      Landing Page
+    </button>
+  </div>
+</div>
+
+<button class="copilot-float" onclick="toggleCopilot()">
+  ✨ Copilot
+</button>
+
+<script>
+function toggleCopilot(){
+  document.getElementById("copilotBox").classList.toggle("active");
+}
+
+function sendCopilot(text){
+  const url = "https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20" + encodeURIComponent(text);
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>        
