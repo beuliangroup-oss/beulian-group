@@ -1437,6 +1437,64 @@ footer p {
   from{ transform:rotate(360deg); }
   to{ transform:rotate(0deg); }
 }
+   /* =================================
+   PREMIUM FLOATING EFFECT
+================================= */
+
+.copilot-float{
+    animation:
+    floatingCopilot 4s ease-in-out infinite;
+}
+
+/* ring kedua */
+.copilot-float::before{
+    content:"";
+
+    position:absolute;
+
+    width:125%;
+    height:125%;
+
+    border-radius:50%;
+
+    border:
+    1px solid rgba(212,175,55,.15);
+
+    animation:
+    spinReverse 10s linear infinite;
+
+    z-index:0;
+}
+
+/* melayang perlahan */
+@keyframes floatingCopilot{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* ring berlawanan arah */
+@keyframes spinReverse{
+
+    from{
+        transform:rotate(360deg);
+    }
+
+    to{
+        transform:rotate(0deg);
+    }
+
+}
 
 /* TABLET */
 @media(min-width:769px) and (max-width:1024px){
