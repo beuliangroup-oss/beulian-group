@@ -1273,9 +1273,11 @@ footer p {
     height: 205px;
   }
 
-   /* ===============================
+
+/* ===============================
    BEULIAN COPILOT FINAL PREMIUM
-   FIX LOGO BESAR + DOUBLE RING
+   Logo kecil, double ring emas,
+   glow hidup, floating, online dot
    =============================== */
 
 .copilot-float,
@@ -1285,15 +1287,23 @@ footer p {
   box-sizing: border-box !important;
 }
 
-/* Tombol logo melayang */
+/* ===============================
+   FLOATING BUTTON
+   =============================== */
+
 .copilot-float {
   position: fixed !important;
-  right: 18px !important;
-  bottom: 24px !important;
-  z-index: 99990 !important;
+  left: 18px !important;
+  right: auto !important;
+  bottom: 20vh !important;
 
-  width: 72px !important;
-  height: 72px !important;
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  max-width: 64px !important;
+  min-height: 64px !important;
+  max-height: 64px !important;
+
   padding: 0 !important;
   margin: 0 !important;
 
@@ -1310,11 +1320,13 @@ footer p {
   overflow: visible !important;
   isolation: isolate !important;
 
+  z-index: 999999 !important;
+
   animation: floatingCopilot 4s ease-in-out infinite !important;
 }
 
 /* Glow emas luar */
-.copilot-float::before {
+.copilot-float::after {
   content: "" !important;
   position: absolute !important;
 
@@ -1324,26 +1336,26 @@ footer p {
   border-radius: 50% !important;
   background: radial-gradient(
     circle,
-    rgba(212, 175, 55, 0.42),
+    rgba(212, 175, 55, 0.38),
     transparent 68%
   ) !important;
 
   z-index: 0 !important;
   pointer-events: none !important;
 
-  animation: copilotGlow 2.8s ease-in-out infinite !important;
+  animation: glowCopilot 3s ease-in-out infinite !important;
 }
 
-/* Ring kedua berputar berlawanan arah */
-.copilot-float::after {
+/* Ring kedua berlawanan arah */
+.copilot-float::before {
   content: "" !important;
   position: absolute !important;
 
-  width: 125% !important;
-  height: 125% !important;
+  width: 86px !important;
+  height: 86px !important;
 
   border-radius: 50% !important;
-  border: 1px solid rgba(212, 175, 55, 0.18) !important;
+  border: 1px solid rgba(212, 175, 55, 0.16) !important;
 
   z-index: 1 !important;
   pointer-events: none !important;
@@ -1351,14 +1363,14 @@ footer p {
   animation: spinReverse 10s linear infinite !important;
 }
 
-/* Logo utama agar tidak besar */
+/* Logo utama */
 .copilot-float img {
-  width: 58px !important;
-  height: 58px !important;
-  min-width: 58px !important;
-  max-width: 58px !important;
-  min-height: 58px !important;
-  max-height: 58px !important;
+  width: 54px !important;
+  height: 54px !important;
+  min-width: 54px !important;
+  max-width: 54px !important;
+  min-height: 54px !important;
+  max-height: 54px !important;
 
   display: block !important;
   object-fit: cover !important;
@@ -1368,69 +1380,62 @@ footer p {
   z-index: 4 !important;
 
   background: #000 !important;
+
   box-shadow:
-    0 0 18px rgba(212, 175, 55, 0.75),
-    0 0 35px rgba(212, 175, 55, 0.35) !important;
+    0 0 18px rgba(212, 175, 55, 0.65),
+    0 0 38px rgba(212, 175, 55, 0.35) !important;
+
+  animation: logoGlow 3s ease-in-out infinite !important;
 }
 
-/* Ring utama emas berputar */
+/* Ring utama emas */
 .copilot-ring {
   position: absolute !important;
-  inset: -7px !important;
+
+  width: 72px !important;
+  height: 72px !important;
 
   border-radius: 50% !important;
+  border: 2px solid rgba(212, 175, 55, 0.25) !important;
+  border-top-color: #d4af37 !important;
+  border-right-color: #f5d77a !important;
+
   z-index: 3 !important;
-
-  background: conic-gradient(
-    from 0deg,
-    #7a520c,
-    #d4af37,
-    #fff2a6,
-    #b8860b,
-    #7a520c
-  ) !important;
-
-  animation: copilotSpin 3.5s linear infinite !important;
   pointer-events: none !important;
+
+  animation: spinRing 6s linear infinite !important;
 }
 
-/* Lubang tengah ring */
-.copilot-ring::after {
-  content: "" !important;
-  position: absolute !important;
-
-  inset: 5px !important;
-  border-radius: 50% !important;
-
-  background: #000 !important;
-}
-
-/* Titik online hijau */
+/* Titik online */
 .copilot-online {
   position: absolute !important;
-  right: 8px !important;
-  bottom: 8px !important;
+  top: 6px !important;
+  right: 5px !important;
 
-  width: 14px !important;
-  height: 14px !important;
+  width: 13px !important;
+  height: 13px !important;
 
   border-radius: 50% !important;
-  background: #00ff66 !important;
-  border: 2px solid #000 !important;
+  background: #32d95f !important;
+  border: 2px solid #fff !important;
 
   z-index: 5 !important;
 
-  box-shadow: 0 0 12px rgba(0, 255, 102, 0.9) !important;
+  box-shadow: 0 0 10px #32d95f !important;
 }
 
-/* Box chat copilot */
+/* ===============================
+   COPILOT BOX
+   =============================== */
+
 .copilot-box {
   position: fixed !important;
-  right: 18px !important;
-  bottom: 110px !important;
-  z-index: 99989 !important;
+  left: 18px !important;
+  right: auto !important;
+  bottom: calc(20vh + 82px) !important;
 
-  width: min(330px, calc(100vw - 28px)) !important;
+  width: 320px !important;
+  max-width: 88vw !important;
   max-height: 70vh !important;
 
   display: none !important;
@@ -1442,23 +1447,336 @@ footer p {
   background:
     linear-gradient(
       145deg,
-      rgba(10, 10, 10, 0.96),
-      rgba(26, 20, 8, 0.98)
+      rgba(15, 15, 15, 0.98),
+      rgba(28, 19, 6, 0.98)
     ) !important;
 
   box-shadow:
-    0 18px 55px rgba(0, 0, 0, 0.75),
-    0 0 30px rgba(212, 175, 55, 0.22) !important;
+    0 30px 80px rgba(0, 0, 0, 0.65),
+    0 0 34px rgba(212, 175, 55, 0.18) !important;
 
   backdrop-filter: blur(14px) !important;
+
+  z-index: 999998 !important;
 }
 
 .copilot-box.active {
   display: block !important;
 }
 
-/* Header chat */
+/* Header */
 .copilot-header {
   width: 100% !important;
-   
-   
+
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+
+  padding: 14px 16px !important;
+
+  background: linear-gradient(135deg, #171717, #2b1a05) !important;
+  color: #d4af37 !important;
+
+  border-bottom: 1px solid rgba(212, 175, 55, 0.24) !important;
+}
+
+.copilot-header img {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  max-width: 34px !important;
+  min-height: 34px !important;
+  max-height: 34px !important;
+
+  display: block !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.45) !important;
+}
+
+.copilot-header strong {
+  flex: 1 !important;
+
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 17px !important;
+  line-height: 1 !important;
+  color: #f8e08e !important;
+}
+
+.copilot-header button {
+  width: 30px !important;
+  height: 30px !important;
+
+  padding: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: none !important;
+  border-radius: 50% !important;
+
+  color: #fff !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+
+  cursor: pointer !important;
+}
+
+.copilot-header button:hover {
+  background: #d4af37 !important;
+  color: #111 !important;
+}
+
+/* Body */
+.copilot-body {
+  padding: 18px !important;
+}
+
+.copilot-body p {
+  margin: 0 0 14px !important;
+
+  color: #ddd !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+
+.copilot-body button {
+  width: 100% !important;
+
+  margin-top: 10px !important;
+  padding: 12px 14px !important;
+
+  display: block !important;
+
+  border-radius: 14px !important;
+  border: 1px solid rgba(212, 175, 55, 0.32) !important;
+
+  background: #181818 !important;
+  color: #fff !important;
+
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  text-align: left !important;
+
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.copilot-body button:hover {
+  background: #d4af37 !important;
+  color: #111 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ===============================
+   ANIMASI
+   =============================== */
+
+@keyframes floatingCopilot {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes logoGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 14px rgba(212, 175, 55, 0.35),
+      0 0 28px rgba(212, 175, 55, 0.18);
+  }
+
+  50% {
+    box-shadow:
+      0 0 28px rgba(212, 175, 55, 0.85),
+      0 0 46px rgba(212, 175, 55, 0.45);
+  }
+}
+
+@keyframes glowCopilot {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(0.94);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes spinRing {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* ===============================
+   HP
+   =============================== */
+
+@media (max-width: 480px) {
+  .copilot-float {
+    left: 16px !important;
+    bottom: 20vh !important;
+
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    max-width: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
+  }
+
+  .copilot-float img {
+    width: 54px !important;
+    height: 54px !important;
+    min-width: 54px !important;
+    max-width: 54px !important;
+    min-height: 54px !important;
+    max-height: 54px !important;
+  }
+
+  .copilot-ring {
+    width: 72px !important;
+    height: 72px !important;
+  }
+
+  .copilot-float::before {
+    width: 86px !important;
+    height: 86px !important;
+  }
+
+  .copilot-float::after {
+    width: 96px !important;
+    height: 96px !important;
+  }
+
+  .copilot-box {
+    left: 14px !important;
+    right: 14px !important;
+    bottom: calc(20vh + 82px) !important;
+
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+/* ===============================
+   TABLET
+   =============================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .copilot-float {
+    left: 22px !important;
+
+    width: 72px !important;
+    height: 72px !important;
+    min-width: 72px !important;
+    max-width: 72px !important;
+    min-height: 72px !important;
+    max-height: 72px !important;
+  }
+
+  .copilot-float img {
+    width: 62px !important;
+    height: 62px !important;
+    min-width: 62px !important;
+    max-width: 62px !important;
+    min-height: 62px !important;
+    max-height: 62px !important;
+  }
+
+  .copilot-ring {
+    width: 82px !important;
+    height: 82px !important;
+  }
+
+  .copilot-float::before {
+    width: 96px !important;
+    height: 96px !important;
+  }
+
+  .copilot-float::after {
+    width: 108px !important;
+    height: 108px !important;
+  }
+
+  .copilot-box {
+    left: 22px !important;
+    bottom: calc(20vh + 96px) !important;
+    width: 330px !important;
+  }
+}
+
+/* ===============================
+   DESKTOP
+   =============================== */
+
+@media (min-width: 1025px) {
+  .copilot-float {
+    left: 30px !important;
+
+    width: 82px !important;
+    height: 82px !important;
+    min-width: 82px !important;
+    max-width: 82px !important;
+    min-height: 82px !important;
+    max-height: 82px !important;
+  }
+
+  .copilot-float img {
+    width: 70px !important;
+    height: 70px !important;
+    min-width: 70px !important;
+    max-width: 70px !important;
+    min-height: 70px !important;
+    max-height: 70px !important;
+  }
+
+  .copilot-ring {
+    width: 92px !important;
+    height: 92px !important;
+  }
+
+  .copilot-float::before {
+    width: 110px !important;
+    height: 110px !important;
+  }
+
+  .copilot-float::after {
+    width: 124px !important;
+    height: 124px !important;
+  }
+
+  .copilot-box {
+    left: 30px !important;
+    bottom: calc(20vh + 108px) !important;
+    width: 340px !important;
+  }
+}
