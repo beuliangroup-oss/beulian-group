@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -12,9 +12,187 @@
 
   <link rel="stylesheet" href="style.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  
+  <!-- CSS FUNGSI WAJIB: MENU, LIGHTBOX, VIDEO POPUP -->
+  <style>
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+    }
+
+    .portfolio-item img,
+    .premium-project-card img,
+    .pricing-showcase img,
+    .mini-gallery img,
+    .portfolio-video,
+    .promo-video {
+      cursor: pointer;
+    }
+
+    .menu-overlay {
+      display: none;
+    }
+
+    .menu-overlay.active {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: 9998;
+    }
+
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    .video-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    .sound-btn {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      z-index: 5;
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.68);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .sound-btn:hover,
+    .sound-btn.active {
+      background: linear-gradient(135deg, #d4af37, #f8e08e);
+      color: #000;
+      transform: scale(1.06);
+    }
+
+    #lightbox,
+    .video-popup {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.94);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    #lightbox.active,
+    .video-popup.active {
+      display: flex;
+    }
+
+    #lightbox-img {
+      max-width: 96vw;
+      max-height: 92vh;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.22);
+      animation: zoomIn 0.25s ease;
+    }
+
+    .video-popup-box {
+      width: min(1100px, 96vw);
+      height: min(720px, 88vh);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: zoomIn 0.25s ease;
+    }
+
+    .video-popup-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      border-radius: 14px;
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.24);
+    }
+
+    .close-lightbox,
+    .close-video {
+      position: fixed;
+      top: 18px;
+      right: 22px;
+      z-index: 100000;
+      width: 46px;
+      height: 46px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      font-size: 34px;
+      line-height: 42px;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+
+    .close-lightbox:hover,
+    .close-video:hover {
+      background: #d4af37;
+      color: #000;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.94);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #lightbox,
+      .video-popup {
+        padding: 10px;
+      }
+
+      #lightbox-img {
+        max-width: 98vw;
+        max-height: 88vh;
+      }
+
+      .video-popup-box {
+        width: 98vw;
+        height: 78vh;
+      }
+
+      .close-lightbox,
+      .close-video {
+        top: 12px;
+        right: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -24,7 +202,7 @@
 
   <!-- MOBILE MENU -->
   <div id="mobileMenu" class="mobile-menu">
-    <button class="close-menu" onclick="closeMenu()">×</button>
+    <button type="button" class="close-menu" onclick="closeMenu()">×</button>
 
     <a href="#tentang" onclick="closeMenu()">Tentang</a>
     <a href="#layanan" onclick="closeMenu()">Layanan</a>
@@ -34,60 +212,60 @@
   </div>
 
   <!-- HERO -->
-<header class="hero" id="beranda">
+  <header class="hero" id="beranda">
 
-  <!-- BACKGROUND HERO -->
-  <div class="hero-bg" aria-hidden="true"></div>
+    <!-- BACKGROUND HERO -->
+    <div class="hero-bg" aria-hidden="true"></div>
 
-  <nav class="navbar">
-    <div class="brand">
-      <img src="assets/logo-beulian-group.png" alt="Beulian Group">
+    <nav class="navbar">
+      <div class="brand">
+        <img src="assets/logo-beulian-group.png" alt="Logo Beulian Group">
 
-      <div>
-        <h3>BEULIAN GROUP</h3>
-        <span>Premium Creative Digital Agency</span>
+        <div>
+          <h3>BEULIAN GROUP</h3>
+          <span>Premium Creative Digital Agency</span>
+        </div>
       </div>
+
+      <button type="button" class="menu-btn" onclick="openMenu()" aria-label="Buka Menu">☰</button>
+    </nav>
+
+    <div class="hero-content">
+
+      <div class="hero-label">
+        CREATIVE ADS • DIGITAL BRANDING • BUSINESS GROWTH
+      </div>
+
+      <h1>
+        Brand Anda <br>
+        terlihat <span>lebih mahal</span>,
+        profesional, dan siap dipercaya.
+      </h1>
+
+      <p>
+        Beulian Group membantu bisnis membangun visual promosi premium
+        melalui video iklan AI, desain campaign, landing page, copywriting,
+        dan konten media sosial yang siap jual.
+      </p>
+
+      <div class="hero-buttons">
+        <a
+          href="https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20saya%20ingin%20konsultasi%20gratis."
+          class="btn-gold"
+          target="_blank"
+          rel="noopener"
+        >
+          Konsultasi Gratis
+        </a>
+
+        <a href="#layanan" class="btn-outline">
+          Lihat Layanan
+        </a>
+      </div>
+
     </div>
+  </header>
 
-    <button class="menu-btn" onclick="openMenu()">☰</button>
-  </nav>
-
-  <div class="hero-content">
-
-    <div class="hero-label">
-      CREATIVE ADS • DIGITAL BRANDING • BUSINESS GROWTH
-    </div>
-
-    <h1>
-      Brand Anda <br>
-      terlihat
-      <span>lebih mahal</span>,
-      profesional, dan
-      siap dipercaya.
-    </h1>
-
-    <p>
-      Beulian Group membantu bisnis membangun visual promosi premium
-      melalui video iklan AI, desain campaign, landing page, copywriting,
-      dan konten media sosial yang siap jual.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20saya%20ingin%20konsultasi%20gratis."
-         class="btn-gold"
-         target="_blank">
-        Konsultasi Gratis
-      </a>
-
-      <a href="#layanan" class="btn-outline">
-        Lihat Layanan
-      </a>
-    </div>
-
-  </div>
-
-</header>
-  
   <main>
 
     <!-- CTA PREMIUM -->
@@ -95,9 +273,12 @@
       <h2>Siap Membuat Bisnis Anda Terlihat Lebih Premium?</h2>
       <p>Video Iklan AI • Branding • Konten TikTok • Landing Page • Digital Marketing</p>
 
-      <a href="https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20saya%20ingin%20konsultasi%20bisnis."
-         class="btn gold"
-         target="_blank">
+      <a
+        href="https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20saya%20ingin%20konsultasi%20bisnis."
+        class="btn gold"
+        target="_blank"
+        rel="noopener"
+      >
         Konsultasi Gratis Sekarang
       </a>
     </section>
@@ -107,9 +288,12 @@
       <h2>Paket Harga Video Iklan AI</h2>
 
       <div class="pricing-showcase">
-        <img src="assets/daftar-harga-video-iklan.png"
-             alt="Daftar Harga Video Iklan Premium Beulian Group"
-             onclick="openLightbox(this.src)">
+        <img
+          src="assets/daftar-harga-video-iklan.png"
+          alt="Daftar Harga Video Iklan Premium Beulian Group"
+          loading="lazy"
+          onclick="openLightbox(this.src)"
+        >
       </div>
     </section>
 
@@ -123,10 +307,20 @@
 
           <div class="portfolio-item">
             <div class="video-wrapper">
-              <video id="video1" class="portfolio-video" autoplay muted loop playsinline preload="metadata" onclick="openVideoPopup('assets/video-luxury.mp4')">
+              <video
+                id="video1"
+                class="portfolio-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                onclick="openVideoPopup('assets/video-luxury.mp4')"
+              >
                 <source src="assets/video-luxury.mp4" type="video/mp4">
               </video>
-              <button type="button" class="sound-btn" onclick="toggleSound(event,'video1',this)">🔇</button>
+
+              <button type="button" class="sound-btn" onclick="toggleSound(event, 'video1', this)">🔇</button>
             </div>
 
             <h3>Video Produk Luxury</h3>
@@ -135,10 +329,20 @@
 
           <div class="portfolio-item">
             <div class="video-wrapper">
-              <video id="video2" class="portfolio-video" autoplay muted loop playsinline preload="metadata" onclick="openVideoPopup('assets/video-automotive.mp4')">
+              <video
+                id="video2"
+                class="portfolio-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                onclick="openVideoPopup('assets/video-automotive.mp4')"
+              >
                 <source src="assets/video-automotive.mp4" type="video/mp4">
               </video>
-              <button type="button" class="sound-btn" onclick="toggleSound(event,'video2',this)">🔇</button>
+
+              <button type="button" class="sound-btn" onclick="toggleSound(event, 'video2', this)">🔇</button>
             </div>
 
             <h3>Video Automotive</h3>
@@ -147,10 +351,20 @@
 
           <div class="portfolio-item">
             <div class="video-wrapper">
-              <video id="video3" class="portfolio-video" autoplay muted loop playsinline preload="metadata" onclick="openVideoPopup('assets/video-skincare.mp4')">
+              <video
+                id="video3"
+                class="portfolio-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                onclick="openVideoPopup('assets/video-skincare.mp4')"
+              >
                 <source src="assets/video-skincare.mp4" type="video/mp4">
               </video>
-              <button type="button" class="sound-btn" onclick="toggleSound(event,'video3',this)">🔇</button>
+
+              <button type="button" class="sound-btn" onclick="toggleSound(event, 'video3', this)">🔇</button>
             </div>
 
             <h3>Video Skincare Premium</h3>
@@ -186,11 +400,20 @@
           <span>01</span>
 
           <div class="video-wrapper">
-            <video id="video4" class="promo-video" autoplay muted loop playsinline preload="metadata" onclick="openVideoPopup('assets/video-iklan-ai.mp4')">
+            <video
+              id="video4"
+              class="promo-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              onclick="openVideoPopup('assets/video-iklan-ai.mp4')"
+            >
               <source src="assets/video-iklan-ai.mp4" type="video/mp4">
             </video>
 
-            <button type="button" class="sound-btn" onclick="toggleSound(event,'video4',this)">🔇</button>
+            <button type="button" class="sound-btn" onclick="toggleSound(event, 'video4', this)">🔇</button>
           </div>
 
           <h3>Video Iklan AI</h3>
@@ -200,9 +423,12 @@
         <div class="premium-project-card card-02">
           <span>02</span>
 
-          <img src="assets/creative-ads.png"
-               alt="Creative Ads"
-               onclick="openLightbox(this.src)">
+          <img
+            src="assets/creative-ads.png"
+            alt="Creative Ads"
+            loading="lazy"
+            onclick="openLightbox(this.src)"
+          >
 
           <h3>Creative Ads</h3>
           <p>Konsep iklan visual yang dibuat agar terlihat profesional dan menarik perhatian.</p>
@@ -211,9 +437,12 @@
         <div class="premium-project-card card-03">
           <span>03</span>
 
-          <img src="assets/digital-branding.png"
-               alt="Digital Branding"
-               onclick="openLightbox(this.src)">
+          <img
+            src="assets/digital-branding.png"
+            alt="Digital Branding"
+            loading="lazy"
+            onclick="openLightbox(this.src)"
+          >
 
           <h3>Digital Branding</h3>
           <p>Penguatan tampilan brand agar terlihat lebih eksklusif, konsisten, dan dipercaya.</p>
@@ -226,17 +455,26 @@
           <h3>Project yang dapat kami kerjakan.</h3>
 
           <div class="mini-gallery">
-            <img src="assets/banner1.png"
-                 alt="Banner Promo Bisnis"
-                 onclick="openLightbox(this.src)">
+            <img
+              src="assets/banner1.png"
+              alt="Banner Promo Bisnis"
+              loading="lazy"
+              onclick="openLightbox(this.src)"
+            >
 
-            <img src="assets/banner2.png"
-                 alt="Poster Digital Premium"
-                 onclick="openLightbox(this.src)">
+            <img
+              src="assets/banner2.png"
+              alt="Poster Digital Premium"
+              loading="lazy"
+              onclick="openLightbox(this.src)"
+            >
 
-            <img src="assets/banner3.png"
-                 alt="Instagram TikTok Ads"
-                 onclick="openLightbox(this.src)">
+            <img
+              src="assets/banner3.png"
+              alt="Instagram TikTok Ads"
+              loading="lazy"
+              onclick="openLightbox(this.src)"
+            >
           </div>
         </div>
 
@@ -250,9 +488,12 @@
         <div class="premium-project-card card-06">
           <span>06</span>
 
-          <img src="assets/copywriting.png"
-               alt="Copywriting"
-               onclick="openLightbox(this.src)">
+          <img
+            src="assets/copywriting.png"
+            alt="Copywriting"
+            loading="lazy"
+            onclick="openLightbox(this.src)"
+          >
 
           <h3>Copywriting</h3>
           <p>Naskah iklan, headline, caption, dan CTA agar promosi lebih kuat menjual.</p>
@@ -261,9 +502,12 @@
         <div class="premium-project-card card-07">
           <span>07</span>
 
-          <img src="assets/landingpage.png"
-               alt="Landing Page Brand"
-               onclick="openLightbox(this.src)">
+          <img
+            src="assets/landingpage.png"
+            alt="Landing Page Brand"
+            loading="lazy"
+            onclick="openLightbox(this.src)"
+          >
 
           <h3>Landing Page Brand</h3>
           <p>Website promosi satu halaman untuk campaign, penawaran jasa, dan brand bisnis.</p>
@@ -306,9 +550,12 @@
       <h2>Siap membuat brand Anda terlihat lebih berkelas?</h2>
       <p>Kirim kebutuhan promosi Anda, kami bantu susun konsep visual terbaik.</p>
 
-      <a class="btn gold"
-         href="https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20saya%20ingin%20konsultasi%20project%20iklan%20digital."
-         target="_blank">
+      <a
+        class="btn gold"
+        href="https://wa.me/62895404870004?text=Halo%20Beulian%20Group,%20saya%20ingin%20konsultasi%20project%20iklan%20digital."
+        target="_blank"
+        rel="noopener"
+      >
         Konsultasi via WhatsApp
       </a>
     </section>
@@ -322,7 +569,7 @@
       <div class="contact-box">
         <div>
           <strong>WhatsApp</strong>
-          <a href="https://wa.me/62895404870004" target="_blank">
+          <a href="https://wa.me/62895404870004" target="_blank" rel="noopener">
             +62 895-4048-70004
           </a>
         </div>
@@ -349,53 +596,78 @@
 
   </main>
 
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Beulian Group. All Rights Reserved.</p>
+  </footer>
+
+  <!-- BEULIAN COPILOT -->
+  <div id="copilotBox" class="copilot-box">
+    <div class="copilot-header">
+      <img src="assets/logo-beulian-group.png" alt="Beulian Copilot">
+      <strong>Beulian Copilot</strong>
+      <button type="button" onclick="toggleCopilot()" aria-label="Tutup Beulian Copilot">×</button>
+    </div>
+
+    <div class="copilot-body">
+      <p>Halo 👋 Saya Beulian Copilot. Pilih layanan yang ingin Anda konsultasikan.</p>
+
+      <button type="button" onclick="copilotWA('Video Iklan AI')">🎬 Video Iklan AI</button>
+      <button type="button" onclick="copilotWA('Creative Ads')">🎨 Creative Ads</button>
+      <button type="button" onclick="copilotWA('Digital Branding')">👑 Digital Branding</button>
+      <button type="button" onclick="copilotWA('Landing Page Brand')">🌐 Landing Page Brand</button>
+    </div>
+  </div>
+
+  <button class="copilot-float" type="button" onclick="toggleCopilot()" aria-label="Beulian Copilot">
+    <span class="copilot-ring"></span>
+    <img src="assets/logo-beulian-group.png" alt="Beulian Copilot">
+    <span class="copilot-online"></span>
+  </button>
+
   <!-- LIGHTBOX GAMBAR FULLSCREEN -->
   <div id="lightbox" onclick="closeLightbox()">
-    <button class="close-lightbox" onclick="closeLightbox()">×</button>
+    <button type="button" class="close-lightbox" onclick="event.stopPropagation(); closeLightbox()">×</button>
     <img id="lightbox-img" src="" alt="Preview Gambar" onclick="event.stopPropagation()">
   </div>
 
   <!-- POPUP VIDEO FULLSCREEN -->
   <div id="videoPopup" class="video-popup" onclick="closeVideoPopup()">
-    <button class="close-video" onclick="closeVideoPopup()">×</button>
+    <button type="button" class="close-video" onclick="event.stopPropagation(); closeVideoPopup()">×</button>
 
     <div class="video-popup-box" onclick="event.stopPropagation()">
       <video id="popupVideo" controls playsinline></video>
     </div>
   </div>
-<!-- FOOTER --><footer>
-  <p>© 2026 Beulian Group. All Rights Reserved.</p>
-</footer>
-  
-  <!-- BEULIAN COPILOT FINAL --><div id="copilotBox" class="copilot-box">
-  <div class="copilot-header">
-    <img src="assets/logo-beulian-group.png" alt="Beulian Copilot">
-    <strong>Beulian Copilot</strong>
-    <button type="button" onclick="toggleCopilot()">×</button>
-  </div>  <div class="copilot-body">
-    <p>Halo 👋 Saya Beulian Copilot. Pilih layanan yang ingin Anda konsultasikan.</p><button type="button" onclick="copilotWA('Video Iklan AI')">🎬 Video Iklan AI</button>
-<button type="button" onclick="copilotWA('Creative Ads')">🎨 Creative Ads</button>
-<button type="button" onclick="copilotWA('Digital Branding')">👑 Digital Branding</button>
-<button type="button" onclick="copilotWA('Landing Page Brand')">🌐 Landing Page Brand</button>
 
-  </div>
-</div><button class="copilot-float" type="button" onclick="toggleCopilot()" aria-label="Beulian Copilot">
-  <span class="copilot-ring"></span>
-  <img src="assets/logo-beulian-group.png" alt="Beulian Copilot">
-  <span class="copilot-online"></span>
-</button>
-
-</script>
-  
   <!-- SCRIPT FINAL -->
   <script>
+    const WA_NUMBER = "62895404870004";
+
+    function updateBodyLock() {
+      const mobileMenu = document.getElementById("mobileMenu");
+      const lightbox = document.getElementById("lightbox");
+      const videoPopup = document.getElementById("videoPopup");
+
+      const isMenuOpen = mobileMenu && mobileMenu.classList.contains("active");
+      const isLightboxOpen = lightbox && lightbox.classList.contains("active");
+      const isVideoOpen = videoPopup && videoPopup.classList.contains("active");
+
+      if (isMenuOpen || isLightboxOpen || isVideoOpen) {
+        document.body.classList.add("modal-open");
+      } else {
+        document.body.classList.remove("modal-open");
+      }
+    }
+
     function openMenu() {
       const mobileMenu = document.getElementById("mobileMenu");
       const menuOverlay = document.getElementById("menuOverlay");
 
       if (mobileMenu) mobileMenu.classList.add("active");
       if (menuOverlay) menuOverlay.classList.add("active");
-      document.body.classList.add("modal-open");
+
+      updateBodyLock();
     }
 
     function closeMenu() {
@@ -404,7 +676,8 @@
 
       if (mobileMenu) mobileMenu.classList.remove("active");
       if (menuOverlay) menuOverlay.classList.remove("active");
-      document.body.classList.remove("modal-open");
+
+      updateBodyLock();
     }
 
     function muteAllVideosExcept(activeVideo) {
@@ -428,16 +701,19 @@
       const video = document.getElementById(videoId);
       if (!video) return;
 
+      const willUnmute = video.muted;
+
       muteAllVideosExcept(video);
 
-      if (video.muted) {
+      if (willUnmute) {
         video.muted = false;
         video.volume = 1;
 
         const playPromise = video.play();
+
         if (playPromise !== undefined) {
           playPromise.catch(function(error) {
-            console.log("Video belum bisa autoplay dengan suara:", error);
+            console.log("Audio video membutuhkan klik pengguna:", error);
           });
         }
 
@@ -446,6 +722,7 @@
       } else {
         video.muted = true;
         video.volume = 0;
+
         btn.innerHTML = "🔇";
         btn.classList.remove("active");
       }
@@ -460,7 +737,6 @@
       muteAllVideosExcept(video);
 
       popup.classList.add("active");
-      document.body.classList.add("modal-open");
 
       video.pause();
       video.src = src;
@@ -471,11 +747,14 @@
       video.load();
 
       const playPromise = video.play();
+
       if (playPromise !== undefined) {
         playPromise.catch(function(error) {
           console.log("Klik tombol play jika audio belum langsung aktif:", error);
         });
       }
+
+      updateBodyLock();
     }
 
     function closeVideoPopup() {
@@ -489,7 +768,8 @@
       }
 
       if (popup) popup.classList.remove("active");
-      document.body.classList.remove("modal-open");
+
+      updateBodyLock();
     }
 
     function openLightbox(src) {
@@ -500,7 +780,8 @@
 
       image.src = src;
       lightbox.classList.add("active");
-      document.body.classList.add("modal-open");
+
+      updateBodyLock();
     }
 
     function closeLightbox() {
@@ -510,7 +791,7 @@
       if (lightbox) lightbox.classList.remove("active");
       if (image) image.src = "";
 
-      document.body.classList.remove("modal-open");
+      updateBodyLock();
     }
 
     function sendToWhatsApp(event) {
@@ -528,7 +809,20 @@
         "WhatsApp: " + whatsapp + "\n" +
         "Pesan: " + pesan;
 
-      window.open("https://wa.me/62895404870004?text=" + encodeURIComponent(text), "_blank");
+      window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text), "_blank");
+    }
+
+    function toggleCopilot() {
+      const copilotBox = document.getElementById("copilotBox");
+
+      if (copilotBox) {
+        copilotBox.classList.toggle("active");
+      }
+    }
+
+    function copilotWA(layanan) {
+      const pesan = "Halo Beulian Group, saya ingin konsultasi layanan " + layanan;
+      window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(pesan), "_blank");
     }
 
     document.addEventListener("keydown", function(event) {
@@ -539,5 +833,6 @@
       }
     });
   </script>
-  </body>
-</html>        
+
+</body>
+</html>
