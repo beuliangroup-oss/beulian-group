@@ -1709,3 +1709,6 @@ body .copilot-online{
   from{transform:rotate(0deg);}
   to{transform:rotate(360deg);}
 }
+/* FIX COPILOT FORCE */
+.copilot-float{
+  position:fixed !
