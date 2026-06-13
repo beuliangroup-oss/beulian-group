@@ -365,12 +365,55 @@
   </div>
 
   <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Beulian Group. All Rights Reserved.</p>
-  </footer>
+<footer>
+  <p>© 2026 Beulian Group. All Rights Reserved.</p>
+</footer>
 
-  <!-- SCRIPT FINAL -->
-  <script>
+<!-- BEULIAN COPILOT FINAL -->
+<div id="copilotBox" class="copilot-box">
+
+  <div class="copilot-header">
+      <img src="assets/logo-beulian-group.png" alt="">
+      <strong>Beulian Copilot</strong>
+      <button onclick="toggleCopilot()">×</button>
+  </div>
+
+  <div class="copilot-body">
+      <p>Halo 👋 Saya Beulian Copilot. Pilih layanan yang ingin Anda konsultasikan.</p>
+
+      <button onclick="copilotWA('Video Iklan AI')">
+        🎬 Video Iklan AI
+      </button>
+
+      <button onclick="copilotWA('Creative Ads')">
+        🎨 Creative Ads
+      </button>
+
+      <button onclick="copilotWA('Digital Branding')">
+        👑 Digital Branding
+      </button>
+
+      <button onclick="copilotWA('Landing Page Brand')">
+        🌐 Landing Page Brand
+      </button>
+
+  </div>
+</div>
+
+<button class="copilot-float"
+        onclick="toggleCopilot()">
+
+    <span class="copilot-ring"></span>
+
+    <img src="assets/logo-beulian-group.png"
+         alt="Beulian Copilot">
+
+    <span class="copilot-online"></span>
+
+</button>
+
+<!-- SCRIPT FINAL -->
+<script>
     function openMenu() {
       const mobileMenu = document.getElementById("mobileMenu");
       const menuOverlay = document.getElementById("menuOverlay");
