@@ -1273,286 +1273,192 @@ footer p {
     height: 205px;
   }
 
-   
-   /* BEULIAN COPILOT FINAL */
-.copilot-float{
-  position:fixed !important;
-  left:18px !important;
-  bottom:20vh !important;
-  width:64px !important;
-  height:64px !important;
-  border:none !important;
-  background:transparent !important;
-  padding:0 !important;
-  border-radius:50% !important;
-  cursor:pointer !important;
-  z-index:999999 !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  animation:floatingCopilot 4s ease-in-out infinite !important;
+   /* ===============================
+   BEULIAN COPILOT FINAL PREMIUM
+   FIX LOGO BESAR + DOUBLE RING
+   =============================== */
+
+.copilot-float,
+.copilot-float *,
+.copilot-box,
+.copilot-box * {
+  box-sizing: border-box !important;
 }
 
-.copilot-float img{
-  width:54px !important;
-  height:54px !important;
-  border-radius:50% !important;
-  object-fit:cover !important;
-  position:relative !important;
-  z-index:3 !important;
+/* Tombol logo melayang */
+.copilot-float {
+  position: fixed !important;
+  right: 18px !important;
+  bottom: 24px !important;
+  z-index: 99990 !important;
+
+  width: 72px !important;
+  height: 72px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: none !important;
+  outline: none !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  cursor: pointer !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+
+  animation: floatingCopilot 4s ease-in-out infinite !important;
+}
+
+/* Glow emas luar */
+.copilot-float::before {
+  content: "" !important;
+  position: absolute !important;
+
+  width: 96px !important;
+  height: 96px !important;
+
+  border-radius: 50% !important;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.42),
+    transparent 68%
+  ) !important;
+
+  z-index: 0 !important;
+  pointer-events: none !important;
+
+  animation: copilotGlow 2.8s ease-in-out infinite !important;
+}
+
+/* Ring kedua berputar berlawanan arah */
+.copilot-float::after {
+  content: "" !important;
+  position: absolute !important;
+
+  width: 125% !important;
+  height: 125% !important;
+
+  border-radius: 50% !important;
+  border: 1px solid rgba(212, 175, 55, 0.18) !important;
+
+  z-index: 1 !important;
+  pointer-events: none !important;
+
+  animation: spinReverse 10s linear infinite !important;
+}
+
+/* Logo utama agar tidak besar */
+.copilot-float img {
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
+  max-width: 58px !important;
+  min-height: 58px !important;
+  max-height: 58px !important;
+
+  display: block !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+
+  position: relative !important;
+  z-index: 4 !important;
+
+  background: #000 !important;
   box-shadow:
-    0 0 18px rgba(212,175,55,.65),
-    0 0 38px rgba(212,175,55,.35) !important;
-  animation:logoGlow 3s ease-in-out infinite !important;
+    0 0 18px rgba(212, 175, 55, 0.75),
+    0 0 35px rgba(212, 175, 55, 0.35) !important;
 }
 
-.copilot-ring{
-  position:absolute !important;
-  width:72px !important;
-  height:72px !important;
-  border-radius:50% !important;
-  border:2px solid rgba(212,175,55,.25) !important;
-  border-top-color:#d4af37 !important;
-  border-right-color:#f5d77a !important;
-  animation:spinRing 6s linear infinite !important;
-  z-index:1 !important;
+/* Ring utama emas berputar */
+.copilot-ring {
+  position: absolute !important;
+  inset: -7px !important;
+
+  border-radius: 50% !important;
+  z-index: 3 !important;
+
+  background: conic-gradient(
+    from 0deg,
+    #7a520c,
+    #d4af37,
+    #fff2a6,
+    #b8860b,
+    #7a520c
+  ) !important;
+
+  animation: copilotSpin 3.5s linear infinite !important;
+  pointer-events: none !important;
 }
 
-.copilot-float::before{
-  content:"" !important;
-  position:absolute !important;
-  width:86px !important;
-  height:86px !important;
-  border-radius:50% !important;
-  border:1px solid rgba(212,175,55,.16) !important;
-  animation:spinReverse 10s linear infinite !important;
-  z-index:0 !important;
+/* Lubang tengah ring */
+.copilot-ring::after {
+  content: "" !important;
+  position: absolute !important;
+
+  inset: 5px !important;
+  border-radius: 50% !important;
+
+  background: #000 !important;
 }
 
-.copilot-online{
-  position:absolute !important;
-  top:6px !important;
-  right:5px !important;
-  width:13px !important;
-  height:13px !important;
-  background:#32d95f !important;
-  border-radius:50% !important;
-  border:2px solid #fff !important;
-  z-index:5 !important;
-  box-shadow:0 0 10px #32d95f !important;
+/* Titik online hijau */
+.copilot-online {
+  position: absolute !important;
+  right: 8px !important;
+  bottom: 8px !important;
+
+  width: 14px !important;
+  height: 14px !important;
+
+  border-radius: 50% !important;
+  background: #00ff66 !important;
+  border: 2px solid #000 !important;
+
+  z-index: 5 !important;
+
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.9) !important;
 }
 
-.copilot-box{
-  position:fixed !important;
-  left:18px !important;
-  bottom:calc(20vh + 82px) !important;
-  width:320px !important;
-  max-width:88vw !important;
-  background:#0f0f0f !important;
-  border:1px solid rgba(212,175,55,.45) !important;
-  border-radius:22px !important;
-  overflow:hidden !important;
-  display:none !important;
-  z-index:999998 !important;
-  box-shadow:0 30px 80px rgba(0,0,0,.65) !important;
+/* Box chat copilot */
+.copilot-box {
+  position: fixed !important;
+  right: 18px !important;
+  bottom: 110px !important;
+  z-index: 99989 !important;
+
+  width: min(330px, calc(100vw - 28px)) !important;
+  max-height: 70vh !important;
+
+  display: none !important;
+  overflow: hidden !important;
+
+  border-radius: 22px !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(10, 10, 10, 0.96),
+      rgba(26, 20, 8, 0.98)
+    ) !important;
+
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, 0.75),
+    0 0 30px rgba(212, 175, 55, 0.22) !important;
+
+  backdrop-filter: blur(14px) !important;
 }
 
-.copilot-box.active{
-  display:block !important;
+.copilot-box.active {
+  display: block !important;
 }
 
-.copilot-header{
-  display:flex !important;
-  align-items:center !important;
-  gap:10px !important;
-  padding:14px 16px !important;
-  background:linear-gradient(135deg,#171717,#2b1a05) !important;
-  color:#d4af37 !important;
-}
-
-.copilot-header img{
-  width:34px !important;
-  height:34px !important;
-  border-radius:50% !important;
-  object-fit:cover !important;
-}
-
-.copilot-header strong{
-  flex:1 !important;
-  font-size:15px !important;
-}
-
-.copilot-header button{
-  background:none !important;
-  border:none !important;
-  color:#fff !important;
-  font-size:24px !important;
-  cursor:pointer !important;
-}
-
-.copilot-body{
-  padding:18px !important;
-}
-
-.copilot-body p{
-  color:#ddd !important;
-  font-size:15px !important;
-  line-height:1.6 !important;
-  margin-bottom:14px !important;
-}
-
-.copilot-body button{
-  width:100% !important;
-  margin-top:10px !important;
-  padding:12px !important;
-  border-radius:14px !important;
-  border:1px solid rgba(212,175,55,.32) !important;
-  background:#181818 !important;
-  color:#fff !important;
-  font-weight:800 !important;
-  cursor:pointer !important;
-}
-
-.copilot-body button:hover{
-  background:#d4af37 !important;
-  color:#111 !important;
-}
-
-@keyframes floatingCopilot{
-  0%,100%{ transform:translateY(0); }
-  50%{ transform:translateY(-8px); }
-}
-
-@keyframes logoGlow{
-  0%,100%{ box-shadow:0 0 14px rgba(212,175,55,.35); }
-  50%{ box-shadow:0 0 28px rgba(212,175,55,.85),0 0 46px rgba(212,175,55,.45); }
-}
-
-@keyframes spinRing{
-  from{ transform:rotate(0deg); }
-  to{ transform:rotate(360deg); }
-}
-
-@keyframes spinReverse{
-  from{ transform:rotate(360deg); }
-  to{ transform:rotate(0deg); }
-}
-   /* =================================
-   PREMIUM FLOATING EFFECT
-================================= */
-
-.copilot-float{
-    animation:
-    floatingCopilot 4s ease-in-out infinite;
-}
-
-/* ring kedua */
-.copilot-float::before{
-    content:"";
-
-    position:absolute;
-
-    width:125%;
-    height:125%;
-
-    border-radius:50%;
-
-    border:
-    1px solid rgba(212,175,55,.15);
-
-    animation:
-    spinReverse 10s linear infinite;
-
-    z-index:0;
-}
-
-/* melayang perlahan */
-@keyframes floatingCopilot{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-
-}
-
-/* ring berlawanan arah */
-@keyframes spinReverse{
-
-    from{
-        transform:rotate(360deg);
-    }
-
-    to{
-        transform:rotate(0deg);
-    }
-
-}
-
-/* TABLET */
-@media(min-width:769px) and (max-width:1024px){
-  .copilot-float{
-    left:22px !important;
-    width:72px !important;
-    height:72px !important;
-  }
-
-  .copilot-float img{
-    width:62px !important;
-    height:62px !important;
-  }
-
-  .copilot-ring{
-    width:82px !important;
-    height:82px !important;
-  }
-
-  .copilot-float::before{
-    width:96px !important;
-    height:96px !important;
-  }
-
-  .copilot-box{
-    left:22px !important;
-    bottom:calc(20vh + 96px) !important;
-  }
-}
-
-/* DESKTOP */
-@media(min-width:1025px){
-  .copilot-float{
-    left:30px !important;
-    width:82px !important;
-    height:82px !important;
-  }
-
-  .copilot-float img{
-    width:70px !important;
-    height:70px !important;
-  }
-
-  .copilot-ring{
-    width:92px !important;
-    height:92px !important;
-  }
-
-  .copilot-float::before{
-    width:110px !important;
-    height:110px !important;
-  }
-
-  .copilot-box{
-    left:30px !important;
-    bottom:calc(20vh + 108px) !important;
-    width:340px !important;
-  }
-}     
-
-      
+/* Header chat */
+.copilot-header {
+  width: 100% !important;
+   
+   
