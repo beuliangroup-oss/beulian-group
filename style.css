@@ -1400,6 +1400,149 @@ footer p {
 .copilot-float:hover{
     transform:scale(1.08);
 }
+   /* =================================
+   PREMIUM FLOATING EFFECT
+================================= */
+
+.copilot-float{
+    animation:
+    floatingCopilot 4s ease-in-out infinite;
+}
+
+/* ring kedua */
+.copilot-float::before{
+    content:"";
+
+    position:absolute;
+
+    width:125%;
+    height:125%;
+
+    border-radius:50%;
+
+    border:
+    1px solid rgba(212,175,55,.15);
+
+    animation:
+    spinReverse 10s linear infinite;
+
+    z-index:0;
+}
+
+/* melayang perlahan */
+@keyframes floatingCopilot{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* ring berlawanan arah */
+@keyframes spinReverse{
+
+    from{
+        transform:rotate(360deg);
+    }
+
+    to{
+        transform:rotate(0deg);
+    }
+
+}
+   .copilot-box{
+
+  position:fixed;
+
+  left:25px;
+  bottom:calc(20vh + 120px);
+
+  width:320px;
+
+  background:#0f0f0f;
+
+  border:1px solid rgba(212,175,55,.35);
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  display:none;
+
+  z-index:999998;
+
+  box-shadow:
+  0 30px 80px rgba(0,0,0,.55);
+}
+
+.copilot-box.active{
+  display:block;
+}
+
+.copilot-header{
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:16px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #171717,
+  #2b1a05
+  );
+}
+
+.copilot-header img{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+}
+
+.copilot-header span{
+  color:#d4af37;
+  font-weight:700;
+}
+
+.copilot-body{
+  padding:18px;
+}
+
+.copilot-body button{
+
+  width:100%;
+
+  margin-top:10px;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:#1b1b1b;
+
+  color:white;
+
+  cursor:pointer;
+}
+
+.copilot-body button:hover{
+
+  background:#d4af37;
+
+  color:#111;
+}
 
 /* ==================================
    TABLET (769px - 1024px)
