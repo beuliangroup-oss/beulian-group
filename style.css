@@ -1629,3 +1629,83 @@ footer p {
   }
 }  
              
+/* FORCE FIX COPILOT */
+body #copilotBox.copilot-box{
+  position:fixed !important;
+  left:18px !important;
+  bottom:calc(20vh + 85px) !important;
+  width:320px !important;
+  max-width:88vw !important;
+  display:none !important;
+  background:#101010 !important;
+  border:1px solid rgba(212,175,55,.45) !important;
+  border-radius:22px !important;
+  overflow:hidden !important;
+  z-index:999998 !important;
+}
+
+body #copilotBox.copilot-box.active{
+  display:block !important;
+}
+
+body .copilot-header img{
+  width:34px !important;
+  height:34px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+}
+
+body .copilot-float{
+  position:fixed !important;
+  left:18px !important;
+  bottom:20vh !important;
+  width:64px !important;
+  height:64px !important;
+  padding:0 !important;
+  border:none !important;
+  background:transparent !important;
+  border-radius:50% !important;
+  z-index:999999 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  overflow:visible !important;
+}
+
+body .copilot-float img{
+  width:54px !important;
+  height:54px !important;
+  min-width:54px !important;
+  max-width:54px !important;
+  min-height:54px !important;
+  max-height:54px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+}
+
+body .copilot-ring{
+  position:absolute !important;
+  width:72px !important;
+  height:72px !important;
+  border-radius:50% !important;
+  border:2px solid rgba(212,175,55,.25) !important;
+  border-top-color:#d4af37 !important;
+  animation:spinRing 6s linear infinite !important;
+}
+
+body .copilot-online{
+  position:absolute !important;
+  top:6px !important;
+  right:5px !important;
+  width:13px !important;
+  height:13px !important;
+  background:#32d95f !important;
+  border:2px solid #fff !important;
+  border-radius:50% !important;
+  z-index:5 !important;
+}
+
+@keyframes spinRing{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
